@@ -1,0 +1,18 @@
+.btn-login {
+  width: 100%;
+  background: #00d664;
+  color: #fff;
+}
+
+.page-login {
+  background: #fff;
+  padding: 50px;
+}
+
+.form-control {
+  background: #ebebeb;
+}
+
+.btn-link-style {
+  text-decoration: none;
+}
