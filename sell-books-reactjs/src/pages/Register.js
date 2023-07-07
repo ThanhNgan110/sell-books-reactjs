@@ -11,10 +11,10 @@ const Register = () => {
       <div className="container">
         <div className="row">
        
-          <div className="col-xl-4 col-md-6 col-sm-12  mx-auto">
-            <div className="row">
-              <div className="page-login">
-                <h1 className="text-center fs-3">ĐĂNG KÝ</h1>
+          <div className="col-xl-4 col-md-6 col-sm-12 col-sx-12 mx-auto">
+           
+              <div className="page-register">
+                <h1 className="text-center fs-3">Register</h1>
                 <div className="text-center pb-2">
                   Đã có tài khoản đăng nhập,
                   <a className="btn-link-style" href="./">
@@ -54,7 +54,7 @@ const Register = () => {
                   </div>
                   <div class="btn-register">
                     <button type="button" class="btn btn-block btn-dark">
-                      Đăng ký
+                      Register
                     </button>
                   </div>
                 </form>
@@ -62,7 +62,7 @@ const Register = () => {
             </div>
           </div>
         </div>
-      </div>
+    
     </>
   );
 };

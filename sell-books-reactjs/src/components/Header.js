@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from  'react-router-dom'
 import "../index.css";
 
 import "../assets/css/header.css";
@@ -12,52 +13,49 @@ const Header = () => {
           <div className="d-flex justify-content-between align-items-center">
             <ul className="nav list-unstyled">
               <li className="nav-item">
-                <a href="/" className="nav-link link-black-100">
+                <Link to='/' className="nav-link link-black-100">
                   Chào mừng bạn đến với thế giới BOOK
-                </a>
+                </Link>
               </li>
             </ul>
-            <ul className="nav list-unstyled">
-             
+            <ul className="nav list-unstyled">            
               <li className="nav-item dropdown">
-                <a
+                <Link
                   className="nav-link link-black-100 dropdown-toggle px-3 font-weight-medium"
-                  href="/"
+                  to ="/"
                   id="navbarDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
                   <i class="bi bi-person glph-icon"></i>
-                </a>
+                </Link>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a className="dropdown-item" href="/">
+                    <Link className="dropdown-item" to="account/login">
                       Login
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <hr className="dropdown-divider" />
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/">
+                    <Link className="dropdown-item" to="account/register">
                      Register
-                    </a>
+                    </Link>
                   </li>
-                
-                 
                 </ul>
               </li>
               <li className="nav-item link-black-100 ">
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="nav-link link-black-100 position-relative"
                 >
                   <i class="bi bi-bag glph-icon"></i>
                   <span className="count_item position-absolute bg-dark text-white width-16 height-16 rounded-circle font-size-n9 padding-x padding-y">
                     0
                   </span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -66,9 +64,9 @@ const Header = () => {
 
       <nav className="navbar navbar-expand-lg navbar-light border-bottom">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          <Link className="navbar-brand" to="/">
             <img src={logo} alt="logo.png" width="150" height="100" />
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -100,45 +98,45 @@ const Header = () => {
               <div className="">
                 <ul className="nav list-unstyled d-flex flex-column">
                   <li className="nav-item border-bottom my-3 ">
-                    <a
-                      href="/"
+                    <Link
+                      to="/"
                       className="nav-link link-black-100 font-weight-medium"
                     >
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item link-black-100 border-bottom my-3 font-weight-medium">
-                    <a href="/" className="nav-link link-black-100">
+                    <Link to="/" className="nav-link link-black-100">
                       Category
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item link-black-100 border-bottom my-3 font-weight-medium">
-                    <a href="/" className="nav-link link-black-100">
+                    <Link to="/" className="nav-link link-black-100">
                       Products
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item link-black-100 border-bottom my-3 font-weight-medium">
-                    <a href="/" className="nav-link link-black-100">
+                    <Link to="/" className="nav-link link-black-100">
                       Contact
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item border-bottom my-3 ">
-                    <a
-                      href="/"
+                    <Link
+                      to="/"
                       className="nav-link link-black-100 font-weight-medium"
                     >
                       <i class="bi bi-person glph-icon"></i>
                       Login
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item border-bottom ">
-                  <a
-                      href="/"
+                  <Link
+                      to="/"
                       className="nav-link link-black-100 font-weight-medium"
                     >
                      <i class="bi bi-person-plus glph-icon"></i>
                       Register
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -147,61 +145,61 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li className="nav-item ">
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="nav-link link-black-100 px-3 font-weight-medium"
                 >
                   Home
-                </a>
+                </Link>
               </li>
 
               <li className="nav-item dropdown">
-                <a
+                <Link
                   className="nav-link link-black-100 dropdown-toggle px-3 font-weight-medium"
-                  href="/"
+                  to="/"
                   id="navbarDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
                   Category
-                </a>
+                </Link>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a className="dropdown-item" href="/">
+                    <Link className="dropdown-item" to="/">
                       Action
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/">
+                    <Link className="dropdown-item" to="/">
                       Another action
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <hr className="dropdown-divider" />
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/">
+                    <Link className="dropdown-item" to="/">
                       Something else here
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </li>
               <li className="nav-item ">
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="nav-link link-black-100 px-3 font-weight-medium"
                 >
                   Products
-                </a>
+                </Link>
               </li>
               <li className="nav-item ">
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="nav-link link-black-100 px-3 font-weight-medium"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
             <div className="site-search w-25 position-relative">
