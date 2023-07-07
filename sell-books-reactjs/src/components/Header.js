@@ -3,8 +3,6 @@ import "../index.css";
 
 import "../assets/css/header.css";
 import logo from "../assets/logo/logo.png";
-import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
-import PersonIcon from "@mui/icons-material/Person";
 
 const Header = () => {
   return (
@@ -22,7 +20,7 @@ const Header = () => {
             <ul className="nav list-unstyled">
               <li className="nav-item ">
                 <a href="/" className="nav-link link-black-100">
-                  <PersonIcon />
+                  <i class="bi bi-person glph-icon"></i>
                 </a>
               </li>
               <li className="nav-item link-black-100 ">
@@ -30,7 +28,7 @@ const Header = () => {
                   href="/"
                   className="nav-link link-black-100 position-relative"
                 >
-                  <ShoppingBagIcon />
+                  <i class="bi bi-bag glph-icon"></i>
                   <span className="count_item position-absolute bg-dark text-white width-16 height-16 rounded-circle font-size-n9 padding-x padding-y">
                     0
                   </span>
@@ -41,7 +39,7 @@ const Header = () => {
         </div>
       </div>
 
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light border-bottom">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             <img src={logo} alt="logo.png" width="150" height="100" />
@@ -77,41 +75,43 @@ const Header = () => {
               <div className="">
                 <ul className="nav list-unstyled d-flex flex-column">
                   <li className="nav-item border-bottom my-3 ">
-                    <a href="/" className="nav-link link-black-100">
+                    <a
+                      href="/"
+                      className="nav-link link-black-100 font-weight-medium"
+                    >
                       Home
                     </a>
                   </li>
-                  <li className="nav-item link-black-100 border-bottom my-3 ">
-                    <a
-                      href="/"
-                      className="nav-link link-black-100"
-                    >
+                  <li className="nav-item link-black-100 border-bottom my-3 font-weight-medium">
+                    <a href="/" className="nav-link link-black-100">
                       Category
                     </a>
                   </li>
-                  <li className="nav-item link-black-100 border-bottom my-3 ">
-                    <a
-                      href="/"
-                      className="nav-link link-black-100"
-                    >
+                  <li className="nav-item link-black-100 border-bottom my-3 font-weight-medium">
+                    <a href="/" className="nav-link link-black-100">
                       Products
                     </a>
                   </li>
-                  <li className="nav-item link-black-100 border-bottom my-3 ">
-                    <a
-                      href="/"
-                      className="nav-link link-black-100"
-                    >
+                  <li className="nav-item link-black-100 border-bottom my-3 font-weight-medium">
+                    <a href="/" className="nav-link link-black-100">
                       Contact
                     </a>
                   </li>
                   <li className="nav-item border-bottom my-3 ">
-                    <a href="/" className="nav-link link-black-100">
+                    <a
+                      href="/"
+                      className="nav-link link-black-100 font-weight-medium"
+                    >
+                      <i class="bi bi-person glph-icon"></i>
                       Login
                     </a>
                   </li>
                   <li className="nav-item border-bottom ">
-                    <a href="/" className="nav-link link-black-100">
+                  <a
+                      href="/"
+                      className="nav-link link-black-100 font-weight-medium"
+                    >
+                     <i class="bi bi-person-plus glph-icon"></i>
                       Register
                     </a>
                   </li>
@@ -122,14 +122,17 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li className="nav-item ">
-                <a href="/" className="nav-link link-black-100 px-3">
+                <a
+                  href="/"
+                  className="nav-link link-black-100 px-3 font-weight-medium"
+                >
                   Home
                 </a>
               </li>
 
               <li className="nav-item dropdown">
                 <a
-                  className="nav-link link-black-100 dropdown-toggle px-3"
+                  className="nav-link link-black-100 dropdown-toggle px-3 font-weight-medium"
                   href="/"
                   id="navbarDropdown"
                   role="button"
@@ -160,12 +163,18 @@ const Header = () => {
                 </ul>
               </li>
               <li className="nav-item ">
-                <a href="/" className="nav-link link-black-100 px-3">
+                <a
+                  href="/"
+                  className="nav-link link-black-100 px-3 font-weight-medium"
+                >
                   Products
                 </a>
               </li>
               <li className="nav-item ">
-                <a href="/" className="nav-link link-black-100 px-3">
+                <a
+                  href="/"
+                  className="nav-link link-black-100 px-3 font-weight-medium"
+                >
                   Contact
                 </a>
               </li>
@@ -181,7 +190,7 @@ const Header = () => {
                   />
                   <div className="input-group-btn">
                     <button className="btn icon-fallback-text">
-                      <i className="fa-solid fa-magnifying-glass"></i>
+                      <i class="bi bi-search glph-icon"></i>
                     </button>
                   </div>
                 </div>

@@ -77,6 +77,9 @@ a:hover {
 .font-size-n9 {
   font-size: 13px;
 }
+.font-weight-medium {
+  font-weight: 500!important;
+}
 .padding-x {
   padding-left: 6px;
   padding-right: 6px;
@@ -101,6 +104,12 @@ a:hover {
   right: 0;
 }
 
+.form-control {
+  background: #f6f5f3 !important;
+}
 .input-group>.form-control:focus{
   z-index: 0;
+}
+.glph-icon{
+  font-size: 19px;
 }
