@@ -58,7 +58,7 @@ body {
   background-color: #fff;
 }
 .border-bottom {
-  border-bottom: 1px solid #eae8e4!important;
+  border-bottom: 1px solid #eae8e4 !important;
 }
 
 .nav-link {
@@ -66,19 +66,14 @@ body {
   padding: 0.5rem 1rem;
 }
 .link-black-100 {
-  color: #19110b;
+  color: #19110b !important;
 }
 
 a:hover {
   color: #f30b0b !important;
   text-decoration: none;
 }
-/* .width-16 {
-  width: 1rem;
-}
-.height-16{
-  height: 1rem;
-} */
+
 .font-size-n9 {
   font-size: 13px;
 }
@@ -89,4 +84,23 @@ a:hover {
 .padding-y {
   padding-top: 0px;
   padding-bottom: 0px;
+}
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+.input-group input:focus {
+  box-shadow: none !important;
+  /* border-color: #ebebeb !important; */
+ 
+}
+
+.input-group-btn {
+  position: absolute;
+  right: 0;
+}
+
+.input-group>.form-control:focus{
+  z-index: 0;
 }
