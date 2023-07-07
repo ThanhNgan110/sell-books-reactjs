@@ -18,10 +18,35 @@ const Header = () => {
               </li>
             </ul>
             <ul className="nav list-unstyled">
-              <li className="nav-item ">
-                <a href="/" className="nav-link link-black-100">
+             
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link link-black-100 dropdown-toggle px-3 font-weight-medium"
+                  href="/"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
                   <i class="bi bi-person glph-icon"></i>
                 </a>
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a className="dropdown-item" href="/">
+                      Login
+                    </a>
+                  </li>
+                  <li>
+                    <hr className="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="/">
+                     Register
+                    </a>
+                  </li>
+                
+                 
+                </ul>
               </li>
               <li className="nav-item link-black-100 ">
                 <a
