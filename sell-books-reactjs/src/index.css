@@ -1,13 +1,92 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --blue: #3259ea;
+  --indigo: #a200fc;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #f75454;
+  --orange: #fd7e14;
+  --yellow: #fced70;
+  --green: #88cf00;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #7f7f83;
+  --gray-dark: #232f3e;
+  --primary: #f75454;
+  --secondary: #161619;
+  --success: #88cf00;
+  --info: #17a2b8;
+  --warning: #fced70;
+  --danger: #f75454;
+  --light: #f8f9fa;
+  --dark: #161619;
+  --primary-green: #88cf00;
+  --primary-yellow: #fced70;
+  --yellow-darker: #ffbd00;
+  --primary-home-v3: #041e42;
+  --primary-indigo: #a200fc;
+  --indigo-light: #faf1ff;
+  --tangerine: #f79400;
+  --tangerine-light: #faf4eb;
+  --chili: #f01000;
+  --chili-light: #f4e6e5;
+  --carolina: #00cdef;
+  --carolina-light: #e6f2f4;
+  --punch: #ff8e8e;
+  --punch-light: #fff6f6;
+  --secondary-gray-700: #7c6e65;
+  --secondary-gray-800: #232f3e;
+  --secondary-gray-1080: #cccccc;
+  --secondary-gray-1090: #7e7e7e;
+  --secondary-black-100: #19110b;
+  --secondary-black-200: #1c2633;
+  --dark-1: #2d3942;
+  --red-1: #ff7160;
+}
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #161619;
+  text-align: left;
+  background-color: #fff;
+}
+.border-bottom {
+  border-bottom: 1px solid #eae8e4!important;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+}
+.link-black-100 {
+  color: #19110b;
+}
+
+a:hover {
+  color: #f30b0b !important;
+  text-decoration: none;
+}
+/* .width-16 {
+  width: 1rem;
+}
+.height-16{
+  height: 1rem;
+} */
+.font-size-n9 {
+  font-size: 13px;
+}
+.padding-x {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.padding-y {
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
