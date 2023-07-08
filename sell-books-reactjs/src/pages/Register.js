@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import "../assets/css/register.css";
 import "../index.css";
 
@@ -15,11 +16,11 @@ const Register = () => {
            
               <div className="page-register">
                 <h1 className="text-center fs-3">Register</h1>
-                <div className="text-center pb-2">
+                <div className="text-center mb-3">
                   Đã có tài khoản đăng nhập,
-                  <a className="btn-link-style" href="./">
+                  <Link className="btn-link-style" to="../login">
                     tại đây
-                  </a>
+                  </Link>
                 </div>
                 <form action="" method="" onSubmit={submitLoginHandler}>                
                   <div class="mb-3">

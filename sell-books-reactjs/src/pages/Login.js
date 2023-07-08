@@ -14,11 +14,11 @@ const Login = () => {
              
                 <div className="page-register">
                   <h1 className="text-center fs-3">Login</h1>
-                  <div className="text-center pb-2">
+                  <div className="text-center mb-3">
                    Nếu bạn chưa có tài khoản,đăng ký
-                    <a className="btn-link-style" href="./">
+                    <Link className="btn-link-style" to="../register">
                       tại đây
-                    </a>
+                    </Link>
                   </div>
                   <form action="" method="" onSubmit={submitLoginHandler}>                
                     <div class="mb-3">
@@ -41,7 +41,7 @@ const Login = () => {
                            <label htmlFor=''>Remember me</label> 
 
                         </div>
-                        <Link className="nav-link link-black-100" to='/'><u>Forgot Password?</u></Link>
+                        <Link className="nav-link link-black-100" to='../forgotPassword' ><u>Forgot Password?</u></Link>
 
                     </div>
                     <div class="btn-login">

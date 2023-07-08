@@ -113,3 +113,16 @@ a:hover {
 .glph-icon{
   font-size: 19px;
 }
+small, .small {
+  font-size: 90%;
+  font-weight: 400;
+}
+.text-muted {
+  color: #7f7f83!important;
+}
+
+.link-red-100{
+  color: #f75454;
+  text-decoration: none;
+  background-color: transparent;
+}
