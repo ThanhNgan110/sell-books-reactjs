@@ -1,7 +1,10 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 
 const Login = () => {
+  const handleInputChange = () => {
+
+  }
     const submitLoginHandler = (e) => {
       e.preventDefault();
     };
@@ -26,6 +29,8 @@ const Login = () => {
                         type="text"
                         class="form-control"
                         placeholder="UserName"
+                        onChange={handleInputChange}
+                      
                       />
                     </div>                 
                     <div class="mb-3">
@@ -33,6 +38,7 @@ const Login = () => {
                         type="password"
                         class="form-control"
                         placeholder="Password"
+                        onChange={handleInputChange}
                       />
                     </div>
                     <div className='mb-3 d-flex justify-content-between align-items-center'>

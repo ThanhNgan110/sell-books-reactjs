@@ -126,3 +126,9 @@ small, .small {
   text-decoration: none;
   background-color: transparent;
 }
+
+.message-error{
+  color: #ff8800;
+  font-size: 13px;
+  font-weight: 500;
+}
