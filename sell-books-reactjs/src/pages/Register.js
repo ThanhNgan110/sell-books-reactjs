@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState} from "react";
+import { Link, useNavigate} from "react-router-dom";
 import "../assets/css/register.css";
 import "../index.css";
 import Error from "../components/Error";
 
 const Register = () => {
-  const [formData, setFormData] = useState({});
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+  });
   const [isError, setIsError] = useState({});
 
   const handleInputChange = (e) => {
@@ -15,12 +18,12 @@ const Register = () => {
     });
   };
 
-  // request password lenght 10- 12 charact, [0-9], [a-z], [A-Z], and not whitespace
+  // request password lenght 9-10 charact, [0-9], [a-z], [A-Z], and not whitespace
 
   const checkValidPassword = (value) => {
     let regex =
       /^(?!.*\s)(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹]).{9,10}$/;
-    const check = regex.test.value;
+    const check = regex.test(value);
     return check;
   };
 
@@ -34,26 +37,6 @@ const Register = () => {
   const submitRegisterHandler = async (e) => {
     e.preventDefault();
     alert("hhhi");
-    try {
-      console.log(accountRegister);
-      const respone = await fetch("http://34.29.205.142:85/api/create-user", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(accountRegister),
-      });
-
-      console.log(respone.status);
-      console.log(respone.json);
-      if (!respone.ok) {
-        throw new Error("Something wrong!!");
-      }
-      const result = await respone.json();
-      console.log("Result", result);
-    } catch (error) {
-      console.log("Error", error);
-    }
     let isvalid = true;
     const newError = {};
     if (formData.username === undefined) {
@@ -75,7 +58,7 @@ const Register = () => {
     if (formData.password === undefined) {
       newError.password = "Password không được để trống";
       isvalid = false;
-    } else if (!checkValidPassword(formData.password)) {
+    } else if (checkValidPassword(formData.password)) {
       newError.password =
         "Password không đúng định dạng (9-10 ký tự, có chứa chữ in hoa, in thường, ký tự đặc biệt và không có whitespace)";
       isvalid = false;
@@ -85,6 +68,7 @@ const Register = () => {
       setIsError(newError);
     }
     if (isvalid) {
+      setIsError(newError);
       try {
         console.log(accountRegister);
         const respone = await fetch("http://34.29.205.142:85/api/create-user", {
@@ -101,11 +85,16 @@ const Register = () => {
           throw new Error("Something wrong!!");
         }
         const result = await respone.json();
+        alert('succcess');
         console.log("Result", result);
+        setFormData(null);
+        console.log(formData);
+        navigate("../login");
       } catch (error) {
         console.log("Error", error);
       }
     }
+ 
   };
 
   return (
@@ -121,7 +110,7 @@ const Register = () => {
                   tại đây
                 </Link>
               </div>
-              <form action="" method="post" onSubmit={submitRegisterHandler}>
+              <form action="http://34.29.205.142:85/api/create-user" method="post" onSubmit={submitRegisterHandler}>
                 <div className="mb-3">
                   <input
                     type="text"
