@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../assets/css/login.css";
 import Error from "../components/Error";
 
 const Login = () => {
-  // const [userName, setUserName] = useState("");
-  // const [password, setPassword] = useState("");
   const [formData, setFormData] = useState({});
   const [isError, setIsError] = useState({});
   const [status, setStatus] = useState(false);
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     setFormData({
@@ -18,20 +18,19 @@ const Login = () => {
   };
 
   // set status password when click
-  const handlePasswordToggle = ()=> {
-    console.log('status');
-    alert('status');
+  const handlePasswordToggle = () => {
     // set status depencies previousState
-    setStatus(prevState => !prevState);
+    setStatus((prevState) => !prevState);
+  };
 
-  }
-
-
-  let isDisplayPass = !status ? <i className="bi bi-eye-slash"></i> : <i className="bi bi-eye"></i>;
-
+  let isDisplayPass = !status ? (
+    <i className="bi bi-eye-slash"></i>
+  ) : (
+    <i className="bi bi-eye"></i>
+  );
 
   const accountLogin = {
-    user_userName: formData.userName,
+    user_username: formData.username,
     user_password: formData.password,
   };
 
@@ -39,11 +38,11 @@ const Login = () => {
     e.preventDefault();
     let isValid = true;
     const newError = {};
-    if (!formData.userName) {
-      newError.userName = "UserName không được để trống";
+    if (formData.username === undefined) {
+      newError.username = "UserName không được để trống";
       isValid = false;
     }
-    if (!formData.password) {
+    if (formData.password === undefined) {
       newError.password = "Password không được để trống";
       isValid = false;
     }
@@ -62,9 +61,9 @@ const Login = () => {
           return response.json();
         })
         .then((data) => {
-          alert("succcess");
+          console.log("succcess");
           console.log(data);
-          setFormData({});
+          navigate("/");
         })
         .catch((error) => {
           console.log(error);
@@ -95,7 +94,7 @@ const Login = () => {
                     type="text"
                     className="form-control"
                     placeholder="UserName"
-                    value={formData.userName}
+                    value={formData.username}
                     onChange={handleInputChange}
                   />
                   <Error onError={isError.userName} />
@@ -103,16 +102,18 @@ const Login = () => {
                 <div className="mb-3 position-relative">
                   <input
                     name="password"
-                    type="password"
+                    type={!status ? "password" : "text"}
                     className="form-control"
                     placeholder="Password"
                     value={formData.password}
                     onChange={handleInputChange}
-                  
                   />
                   <Error onError={isError.password} />
-                  <span className="show-password" onClick={handlePasswordToggle}>
-                   {isDisplayPass}
+                  <span
+                    className="show-password"
+                    onClick={handlePasswordToggle}
+                  >
+                    {isDisplayPass}
                   </span>
                 </div>
                 <div className="mb-3 d-flex justify-content-between align-items-center">

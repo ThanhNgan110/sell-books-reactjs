@@ -1,0 +1,17 @@
+.slide .pagination .slick-current{
+    border: 2px solid #161619!important;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+/* .slide .pagination .slick-current span {
+    display: inline-block;
+    width: 0.375rem;
+    height: 0.375rem;
+    box-sizing: border-box;
+    background-color: #161619;
+    margin: 0.25rem;
+    border-radius: 50%;
+} */
