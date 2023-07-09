@@ -21,6 +21,7 @@ const Login = () => {
   const handlePasswordToggle = ()=> {
     console.log('status');
     alert('status');
+    // set status depencies previousState
     setStatus(prevState => !prevState);
 
   }
