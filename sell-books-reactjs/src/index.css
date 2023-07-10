@@ -71,7 +71,11 @@ body {
 
 a:hover {
   color: #f30b0b !important;
-  text-decoration: none;
+  text-decoration: none !important;
+}
+
+a{
+  text-decoration: none !important;
 }
 
 .font-size-n9 {

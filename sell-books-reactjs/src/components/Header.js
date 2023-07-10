@@ -1,8 +1,6 @@
 import React from "react";
 import {Link} from  'react-router-dom'
 import "../index.css";
-
-import "../assets/css/header.css";
 import logo from "../assets/logo/logo.png";
 
 const Header = () => {
@@ -147,7 +145,7 @@ const Header = () => {
               <li className="nav-item ">
                 <Link
                   to="/"
-                  className="nav-link link-black-100 px-3 font-weight-medium"
+                  className="nav-link link-black-100 px-3 font-weight-medium fs-5 text"
                 >
                   Home
                 </Link>
@@ -155,7 +153,7 @@ const Header = () => {
 
               <li className="nav-item dropdown">
                 <Link
-                  className="nav-link link-black-100 dropdown-toggle px-3 font-weight-medium"
+                  className="nav-link link-black-100 dropdown-toggle px-3 font-weight-medium fs-5 text"
                   to="/"
                   id="navbarDropdown"
                   role="button"
@@ -188,7 +186,7 @@ const Header = () => {
               <li className="nav-item ">
                 <Link
                   to="/"
-                  className="nav-link link-black-100 px-3 font-weight-medium"
+                  className="nav-link link-black-100 px-3 font-weight-medium fs-5 text"
                 >
                   Products
                 </Link>
@@ -196,7 +194,7 @@ const Header = () => {
               <li className="nav-item ">
                 <Link
                   to="/"
-                  className="nav-link link-black-100 px-3 font-weight-medium"
+                  className="nav-link link-black-100 px-3 font-weight-medium fs-5 text"
                 >
                   Contact
                 </Link>
