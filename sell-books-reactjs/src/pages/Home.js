@@ -1,11 +1,16 @@
 import React from 'react';
 import Slides from '../components/Slides';
+import Notification from '../components/Notification';
 
 
 const Home = () => {
   return (
     <>
-    <Slides/>
+    <div className='wrapper-banner'>
+      <Slides/>
+      <Notification/>
+    </div>
+    
    
     </>
   )

@@ -7,7 +7,7 @@ import logo from "../assets/logo/logo.png";
 
 const Header = () => {
   return (
-    <header>
+    <header className="">
       <div className="header-top border-bottom">
         <div className="container-fluid">
           <div className="d-flex justify-content-between align-items-center">
