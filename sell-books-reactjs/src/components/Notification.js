@@ -48,7 +48,7 @@ const Notification = () => {
                     <Link>
                       <h2 className="text-center">
                         <img className="pb-2" src={fram4} alt="fram-4" />
-                        <h6 className="title-frame">Sách nổi bật</h6>
+                        <h6 className="title-frame">Sách giá rẻ</h6>
                       </h2>
                     </Link>
                   </div>
@@ -56,7 +56,7 @@ const Notification = () => {
                     <Link>
                       <h2 className="text-center">
                         <img className="pb-2" src={fram5} alt="fram-5" />
-                        <h6 className="title-frame">Sách giá rẻ</h6>
+                        <h6 className="title-frame">Sách nổi bật</h6>
                       </h2>
                     </Link>
                   </div>
