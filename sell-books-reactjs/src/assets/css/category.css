@@ -1,0 +1,27 @@
+/* .carousel-control-prev{
+    position: absolute;
+
+    background: red;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 2rem;
+    bottom: 0;
+    top: 2.9em;
+}
+
+.carousel-control-next{
+    position: absolute;
+    right: 0rem;
+    background:red;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 2rem;
+    bottom: 0;
+    top: 2.9em;
+} */
+
+
+.text-title{
+    font-size: 1.25rem;
+    color: #19110b !important;
+}

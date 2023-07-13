@@ -19,21 +19,10 @@ const Header = () => {
           <ul class="topbar__nav--right nav">
             <li class="nav-item">
               <div class="position-relative h-100">
-                <Link
+                <Link to=''
                   id="basicDropdownHoverInvoker1"
                   class="d-flex align-items-center h-100 dropdown-nav-link p-2 nav-link link-black-100"
-                  role="button"
-                  aria-controls="basicDropdownHover1"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  data-unfold-event="hover"
-                  data-unfold-target="#basicDropdownHover1"
-                  data-unfold-type="css-animation"
-                  data-unfold-duration="300"
-                  data-unfold-delay="300"
-                  data-unfold-hide-on-scroll="true"
-                  data-unfold-animation-in="slideInUp"
-                  data-unfold-animation-out="fadeOut"
+                 
                 >
                   English
                   <svg
@@ -67,21 +56,11 @@ const Header = () => {
 
             <li class="nav-item">
               <div class="h-100">
-                <Link
+                <Link to="account/register"
                   id="basicDropdownHoverInvoker1"
                   class="d-flex align-items-center h-100 dropdown-nav-link p-2 nav-link link-black-100"
                   role="button"
-                  aria-controls="basicDropdownHover1"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  data-unfold-event="hover"
-                  data-unfold-target="#basicDropdownHover1"
-                  data-unfold-type="css-animation"
-                  data-unfold-duration="300"
-                  data-unfold-delay="300"
-                  data-unfold-hide-on-scroll="true"
-                  data-unfold-animation-in="slideInUp"
-                  data-unfold-animation-out="fadeOut"
+                
                 >
                   Register
                 </Link>
@@ -95,21 +74,9 @@ const Header = () => {
             </li>
             <li class="nav-item">
               <div class="h-100">
-                <Link
+                <Link to="account/login"
                   id="basicDropdownHoverInvoker1"
                   class="d-flex align-items-center h-100 dropdown-nav-link p-2 nav-link link-black-100"
-                  role="button"
-                  aria-controls="basicDropdownHover1"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  data-unfold-event="hover"
-                  data-unfold-target="#basicDropdownHover1"
-                  data-unfold-type="css-animation"
-                  data-unfold-duration="300"
-                  data-unfold-delay="300"
-                  data-unfold-hide-on-scroll="true"
-                  data-unfold-animation-in="slideInUp"
-                  data-unfold-animation-out="fadeOut"
                 >
                   Login
                 </Link>
