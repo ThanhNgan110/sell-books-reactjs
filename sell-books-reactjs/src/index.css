@@ -68,13 +68,14 @@ body {
 .link-black-100 {
   color: #19110b !important;
 }
-
-a:hover {
-  color: #f30b0b !important;
+a {
+  color: #f75454;
+  background-color: transparent;
   text-decoration: none !important;
 }
-
-a {
+a:hover {
+  color: #f75454;
+  background-color: transparent;
   text-decoration: none !important;
 }
 
@@ -145,7 +146,19 @@ small,
 .font-size-26{
   font-size: 1.625rem;
 }
+.font-size-3 {
+  font-size: 1.125rem;
+}
 
 .bg-gray-200 {
     background-color: #fff6f6;
 }
+.h-primary {
+  color: #161619;
+}
+.text-gray-700 {
+  color: #7c6e65;
+}
+/* .text-dark {
+  color: #161619!important;
+} */

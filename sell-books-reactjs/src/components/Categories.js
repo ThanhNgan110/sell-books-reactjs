@@ -28,6 +28,7 @@ const Categories = () => {
   ];
 
   const settings = {
+    dots:true,
     infinite: true,
     speed: 500,
     slidesToShow: 6,
@@ -55,24 +56,23 @@ const Categories = () => {
   const getIcons = category.map((icon) => (
     <div key={icon.id}>
       <Link to="">
-        <h2 className="">  
         <img src={icon.src} alt={icon.alt} />
         <h6 className="title-frame bs-gray-dark">{icon.title}</h6>
-
-        </h2>
-    
       </Link>
     </div>
   ));
 
   return (
     <>
-      <section className="section-categories">
-        <div className="container bg-gray-200">
-          <div className="section-top d-md-flex justify-content-between align-items-center mb-3">
+      <section className="section-categories my-4">
+        <div className="container">
+          <div className="section-top ">
             <h2 className="text-title">DANH MỤC</h2>
           </div>
-          <Slider {...settings}>{getIcons}</Slider>
+          <div className="section-bottom bg-gray-200 rounded-md">
+             <Slider {...settings}>{getIcons}</Slider>
+          </div>
+        
         </div>
       </section>
     </>

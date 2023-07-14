@@ -14,7 +14,7 @@ import "../assets/css/notification.css";
 const Notification = () => {
   return (
     <>
-      <div className="container my-3">
+      <div className="container my-4">
         <div className="row">
           <div className="col-12">
             <div className="row py-3">

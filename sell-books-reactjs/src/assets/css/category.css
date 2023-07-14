@@ -20,8 +20,11 @@
     top: 2.9em;
 } */
 
+.text-title {
+  font-size: 1.25rem;
+  color: #19110b !important;
+}
 
-.text-title{
-    font-size: 1.25rem;
-    color: #19110b !important;
+.rounded-md {
+  border-radius: 0.5rem!important;
 }
