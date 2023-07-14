@@ -12,7 +12,7 @@ import img4 from "../assets/img5.jpg";
 import "../assets/css/bookOutStanding.css";
 
 
-const BookOutStanding = () => {
+const BookNew = () => {
   const settings = {
     infinite: false,
     speed: 500,
@@ -130,7 +130,7 @@ const BookOutStanding = () => {
     <div className="container my-4">
       <section className="section-outstanding">
         <div className="d-flex justify-content-between align-items-center">
-          <h2 className="font-size-26">SÁCH NỔI BẬT</h2>
+          <h2 className="font-size-26">SÁCH MỚI NHẤT</h2>
           <Link
             to=""
             className="d-flex justify-content-between align-items-center h-primary"
@@ -189,4 +189,4 @@ function SamplePrevArrow(props) {
     />
   );
 }
-export default BookOutStanding;
+export default BookNew;

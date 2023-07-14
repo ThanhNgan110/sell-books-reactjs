@@ -3,6 +3,10 @@ import Slides from '../components/Slides';
 import Notification from '../components/Notification';
 import Categories from '../components/Categories';
 import BookOutStanding from '../components/BookOutStanding';
+import BookSelling from '../components/BookSelling';
+import BookNew from '../components/BookNew';
+import BookDifference from '../components/BookDifference';
+
 
 
 const Home = () => {
@@ -13,6 +17,9 @@ const Home = () => {
       <Notification/>
       {/* <Categories/> */}
       <BookOutStanding/>
+      <BookSelling/>
+      <BookNew/>
+      <BookDifference/>
     </div>
     
    
