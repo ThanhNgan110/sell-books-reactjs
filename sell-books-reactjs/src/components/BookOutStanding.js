@@ -11,14 +11,15 @@ import img3 from "../assets/img5.jpg";
 import img4 from "../assets/img5.jpg";
 import "../assets/css/bookOutStanding.css";
 
+
 const BookOutStanding = () => {
   const settings = {
-    dots: true,
-
     infinite: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 2,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow /> ,
     responsive: [
       {
         breakpoint: 1024,
@@ -27,6 +28,7 @@ const BookOutStanding = () => {
         },
       },
       {
+        dots: true,
         breakpoint: 600,
         settings: {
           dots: true,
@@ -83,7 +85,7 @@ const BookOutStanding = () => {
   const renderBookFeature = featureBook.map((book) => (
     <div className="card" key={book.id}>
       <div className="p-3">
-        <div className="product-book ">
+        <div className="product-book mb-3 ">
           <Link to="">
             <img className="mx-auto" src={book.src} alt="" />
           </Link>
@@ -98,12 +100,12 @@ const BookOutStanding = () => {
               {book.price}
             </span>
           </div>
-          <div className="d-flex justify-content-between align-items-center">
+          <div className="d-flex justify-content-between align-items-center mt-2">
             <button className="product_add-to-cart text-dark text-dark font-weight-medium "> Add to cart
                {/* <span className="product_add-to-cart text-dark text-dark font-weight-medium ">Add to cart</span> */}
             </button>
            
-            <span className="">
+            <span className="d-flex flex-row justify-content-center align-items-center btn-outline-primary">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="22"
@@ -153,5 +155,38 @@ const BookOutStanding = () => {
     </div>
   );
 };
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style,   display: "block",
+        width: "2.813rem",
+        height: "2.813rem",
+        cursor: "pointer",
+        transition: ".3s",
+        border: "1px solid #eae8e4",
+        position: "absolute" }}
+      onClick={onClick}
+    />
+  );
+}
 
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style,  width: "2.813rem",
+      height: "2.813rem",
+      cursor: "pointer",
+      transition: ".3s",
+      zIndex:"1",
+      border: "1px solid #eae8e4",
+      position: "absolute",
+     }}
+      onClick={onClick}
+    />
+  );
+}
 export default BookOutStanding;
