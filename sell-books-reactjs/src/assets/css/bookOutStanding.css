@@ -4,9 +4,10 @@
 
   .card{
     border: 1px solid #eae8e4!important;
+    border-radius: 0rem;
   }
   .card:hover{
-    border-color: #f75454!important;
+    border-color: #161619 !important;
     box-shadow: 0 0 20px 3px rgba(22,22,25,.1);
     transition: all .2s ease-in-out;
   }
@@ -18,7 +19,10 @@
     color: #161619;
     
   }
-  
+  .h-p-bg:hover {
+    color: #fff;
+}
+.btn-outline-primary #styled-element:hover { stroke:white }
   .btn-outline-primary:hover{
     width:2rem;
     height:2rem;

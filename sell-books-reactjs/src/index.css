@@ -162,3 +162,13 @@ small,
 /* .text-dark {
   color: #161619!important;
 } */
+
+.space-bottom-3 {
+  padding-bottom: 4rem!important;
+}
+.text-gray-450 {
+  color: #9ca6ad!important;
+}
+.border-gray-710 {
+  border-color: #445059!important;
+}

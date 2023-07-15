@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../index.css";
-
 import "../assets/css/header.css";
+
 
 const Header = () => {
   return (
-    <header className="container">
+    <>    <header className="container">
       <div className="header-top border-bottom">
         <div className="d-flex justify-content-between align-items-center">
           <ul className="nav list-unstyled">
@@ -115,20 +115,10 @@ const Header = () => {
               </div>
               <div className="input-group-btn">
                 <button className="btn icon-fallback-text">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle cx="11" cy="11" r="6" stroke="#222222" />
-                    <path
-                      d="M20 20L17 17"
-                      stroke="#222222"
-                      stroke-linecap="round"
-                    />
-                  </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+<path d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.9299 20.6898C19.4599 22.2898 20.6699 22.4498 21.5999 21.0498C22.4499 19.7698 21.8899 18.7198 20.3499 18.7198C19.2099 18.7098 18.5699 19.5998 18.9299 20.6898Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
                 </button>
               </div>
             </form>
@@ -237,6 +227,9 @@ const Header = () => {
         {/* </div> */}
       </nav>
     </header>
+  
+    </>
+
   );
 };
 
