@@ -15,7 +15,7 @@ const Home = () => {
     <div className='wrapper-banner'>
       <Slides/>
       <Notification/>
-      {/* <Categories/> */}
+      <Categories/>
       <BookOutStanding/>
       <BookSelling/>
       <BookNew/>
@@ -26,5 +26,6 @@ const Home = () => {
     </>
   )
 }
+
 
 export default Home;

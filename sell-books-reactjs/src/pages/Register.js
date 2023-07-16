@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState, useEffect} from "react";
 import { Link, useNavigate} from "react-router-dom";
 import "../assets/css/register.css";
 import "../index.css";
@@ -10,6 +10,8 @@ const Register = () => {
   const [formData, setFormData] = useState({
   });
   const [isError, setIsError] = useState({});
+  
+
 
   const handleInputChange = (e) => {
     setFormData({
@@ -36,11 +38,11 @@ const Register = () => {
 
   const submitRegisterHandler = async (e) => {
     e.preventDefault();
-    alert("hhhi");
+    // alert("hhhi");
     let isvalid = true;
     const newError = {};
     if (formData.username === undefined) {
-      newError.username = "Tên đăng nhập không được để trống";
+      newError.username = "Email không được để trống";
       isvalid = false;
     }
 
@@ -58,7 +60,7 @@ const Register = () => {
     if (formData.password === undefined) {
       newError.password = "Password không được để trống";
       isvalid = false;
-    } else if (checkValidPassword(formData.password)) {
+    } else if (!checkValidPassword(formData.password)) {
       newError.password =
         "Password không đúng định dạng (9-10 ký tự, có chứa chữ in hoa, in thường, ký tự đặc biệt và không có whitespace)";
       isvalid = false;
@@ -68,10 +70,9 @@ const Register = () => {
       setIsError(newError);
     }
     if (isvalid) {
-      setIsError(newError);
       try {
         console.log(accountRegister);
-        const respone = await fetch("http://34.29.205.142:85/api/create-user", {
+        const respone = await fetch("http://173.255.114.207:85/api/create-user/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -79,23 +80,44 @@ const Register = () => {
           body: JSON.stringify(accountRegister),
         });
 
-        console.log(respone.status);
-        console.log(respone.json);
+        // console.log(respone.status);
+        // console.log(respone.json);
         if (!respone.ok) {
-          throw new Error("Something wrong!!");
+          if( formData.username && respone.status === 500){
+           const errorData = await respone.json();
+          console.log("Error", errorData);
+          setIsError({ username: "Email không tồn tại" });
+          return;
+          }
+          if( formData.username && respone.status === 400){
+            const errorData = await respone.json();
+           console.log("Error", errorData);
+           setIsError({ username: "Email đã được đăng ký" });
+           return;
+           }
+           if( formData.telephone && respone.status === 400){
+           const errorData = await respone.json();
+           console.log("Error", errorData);
+           setIsError({ telephone: "Telephone đã được đăng ký"});
+           return;
+           }
+
         }
         const result = await respone.json();
         alert('succcess');
         console.log("Result", result);
-        setFormData(null);
+        setFormData({});
         console.log(formData);
         navigate("../login");
       } catch (error) {
-        console.log("Error", error);
+        console.log("Error", error.message);
       }
     }
  
   };
+  useEffect(() => {
+    console.log(isError);
+  }, [isError]);
 
   return (
     <>

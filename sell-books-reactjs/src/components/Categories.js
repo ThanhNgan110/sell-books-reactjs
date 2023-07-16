@@ -28,11 +28,14 @@ const Categories = () => {
   ];
 
   const settings = {
-    dots:true,
+
     infinite: true,
     speed: 500,
     slidesToShow: 6,
     slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow /> ,
+    
     responsive: [
       {
         breakpoint: 768,
@@ -78,5 +81,39 @@ const Categories = () => {
     </>
   );
 };
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style,   display: "block",
+        width: "2.813rem",
+        height: "2.813rem",
+        cursor: "pointer",
+        transition: ".3s",
+        border: "1px solid #eae8e4",
+        position: "absolute" }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style,  width: "2.813rem",
+      height: "2.813rem",
+      cursor: "pointer",
+      transition: ".3s",
+      zIndex:"1",
+      border: "1px solid #eae8e4",
+      position: "absolute",
+     }}
+      onClick={onClick}
+    />
+  );
+}
 
 export default Categories;

@@ -149,6 +149,9 @@ small,
 .font-size-3 {
   font-size: 1.125rem;
 }
+.font-size-1 {
+  font-size: 1rem;
+}
 
 .bg-gray-200 {
     background-color: #fff6f6;
@@ -159,9 +162,9 @@ small,
 .text-gray-700 {
   color: #7c6e65;
 }
-/* .text-dark {
+.text-dark {
   color: #161619!important;
-} */
+}
 
 .space-bottom-3 {
   padding-bottom: 4rem!important;
@@ -171,4 +174,10 @@ small,
 }
 .border-gray-710 {
   border-color: #445059!important;
+}
+.text-gray{
+  color: rgba(0,0,0,.65);
+}
+.font-weight-400{
+  font-weight: 400;
 }

@@ -5,6 +5,7 @@ import Register from "./pages/Register";
 import ForgotPassword from "./pages/ForgotPassword";
 import Home from "./pages/Home";
 import RootPage from "./pages/Root";
+import Profile from "./pages/Profile";
 
 function App() {
   const router = createBrowserRouter([
@@ -19,6 +20,7 @@ function App() {
             { path: "login", element: <Login /> },
             { path: "register", element: <Register /> },
             { path: "forgotPassword", element: <ForgotPassword /> },
+             { path: "profile", element: <Profile/> },
           ],
         },
       ],

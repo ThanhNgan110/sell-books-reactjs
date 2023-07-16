@@ -20,9 +20,9 @@ const ForgotPassword = () => {
                                     
                     <div class="mb-3">
                       <input
-                        type="password"
+                        type="email"
                         class="form-control"
-                        placeholder="Password"
+                        placeholder="creativelayers088@gmail.com"
                       />
                     </div>                    
                     <div class="btn-login mb-3">

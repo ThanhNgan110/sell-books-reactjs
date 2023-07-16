@@ -143,8 +143,6 @@ const BookDifference = () => {
                 />
               </svg>
             </span>
-           
-           
           </div>
         </div>
       </div>
