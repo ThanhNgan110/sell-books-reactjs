@@ -114,7 +114,9 @@ a:hover {
 }
 
 .form-control {
-  background: #f6f5f3 !important;
+  /* background: #f6f5f3 !important; */
+  background: #fff !important;
+  
 }
 .input-group > .form-control:focus {
   z-index: 0;
@@ -180,4 +182,11 @@ small,
 }
 .font-weight-400{
   font-weight: 400;
+}
+
+.btn-save {
+  color: #fff;
+  background-color: #f75454;
+  border-color: #f75454;
+
 }

@@ -1,22 +1,24 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import avatar from "../assets/avatar.jpg";
 import "../assets/css/profile.css";
+import "../index.css";
 
 const Profile = () => {
   return (
     <div className="container my-5">
       <div className="row">
-        <div className="col-2">
+        <div className="col-lg-2 col-md-12 col-sm-12">
           <div className="account d-flex">
-            <a href="/">
+            <Link to="/">
               <div className="account-avatar pe-3">
                 <img className="avatar" src={avatar} alt="avatar" />
               </div>
-            </a>
+            </Link>
             <div className="account-info d-flex flex-column align-items-center">
               <div className="account_username ">thanhngan</div>
               <div className="d-flex align-items-center">
-                <a href="/" className="d-flex ">
+                <Link to="/" className="d-flex ">
                   <span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -51,14 +53,14 @@ const Profile = () => {
                     </svg>
                   </span>
                   <p className="text-gray-450 font-size-1 ">Sửa Hồ Sơ</p>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
           <div className="my-3  ">
             <div className="">
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="text-dark font-weight-400 d-flex flex-align-items-center "
               >
                 <span>
@@ -93,28 +95,28 @@ const Profile = () => {
                   </svg>
                 </span>
                 Tài khoản của tôi
-              </a>
+              </Link>
               <ul className="list-unstyled ps-4">
                 <li className="p-2">
-                  <a href="/" className="text-gray">
+                  <Link to="../profile" className="text-gray">
                     Hồ Sơ
-                  </a>
+                  </Link>
                 </li>
                 <li className="p-2">
-                  <a href="/" className="text-gray">
+                  <Link to="/" className="text-gray">
                     Địa chỉ
-                  </a>
+                  </Link>
                 </li>
                 <li className="p-2">
-                  <a href="/" className="text-gray">
+                  <Link to="/" className="text-gray">
                     Đổi mật khẩu
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
 
             <div className="d-flex flex-row flex-align-items-center">
-              <a href="/" className="text-dark font-weight-400 ">
+              <Link to="/" className="text-dark font-weight-400 ">
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -154,107 +156,179 @@ const Profile = () => {
                   </svg>
                 </span>
                 Đơn mua
-              </a>
+              </Link>
             </div>
           </div>
         </div>
-        <div className="col-10 ">
-          <div className="">
-            <h5>Thông tin tài khoản</h5>
-            <div>Quản lý thông tin hồ sơ để bảo mật tài khoản</div>
+        <div className="col-lg-10 col-md-12 col-sm-12">
+          <div className="wrapper-intro py-4">
+            <h5 className="text-center">Thông tin tài khoản</h5>
             <div className="container">
-                <div className="form-account">
-              <form>
-              <div class="mb-3 d-flex flex-align-items-center">
-                  <div>Tên đăng nhập</div>
-                  <div className="account-username">thanhngan</div>
-                </div>
-                <div class="row mb-3">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label">
-                    Email
-                  </label>
-                  <div class="col-sm-4">
-                    <input type="email" class="form-control" id="inputEmail3" />
+              <div className="form-account">
+                <form action="" method="post">
+                  <div className="frame-avatar d-flex justify-content-center align-items-center mb-3">
+                    <div className="account-frame pe-3 position-relative">
+                      <img className="avatar-info" src={avatar} alt="avatar" />
+                      <input
+                        type="file"
+                        className=" form-control form-avatar position-absolute"
+                      />
+                      <span className="account-edit">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M13.26 3.59997L5.04997 12.29C4.73997 12.62 4.43997 13.27 4.37997 13.72L4.00997 16.96C3.87997 18.13 4.71997 18.93 5.87997 18.73L9.09997 18.18C9.54997 18.1 10.18 17.77 10.49 17.43L18.7 8.73997C20.12 7.23997 20.76 5.52997 18.55 3.43997C16.35 1.36997 14.68 2.09997 13.26 3.59997Z"
+                            stroke="#292D32"
+                            stroke-width="1.5"
+                            stroke-miterlimit="10"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M11.89 5.05005C12.32 7.81005 14.56 9.92005 17.34 10.2"
+                            stroke="#292D32"
+                            stroke-width="1.5"
+                            stroke-miterlimit="10"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M3 22H21"
+                            stroke="#292D32"
+                            stroke-width="1.5"
+                            stroke-miterlimit="10"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </div>                   
                   </div>
-                </div>
-                <div class="row mb-3">
-                  <label for="inputPassword3" class="col-sm-2 col-form-label">
-                    Password
-                  </label>
-                  <div class="col-sm-4">
-                    <input
-                      type="password"
-                      class="form-control"
-                      id="inputPassword3"
-                    />
-                  </div>
-                </div>
-                <fieldset class="row mb-3">
-                  <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-                  <div class="col-sm-4">
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="gridRadios"
-                        id="gridRadios1"
-                        value="option1"
-                        checked
-                      />
-                      <label class="form-check-label" for="gridRadios1">
-                        First radio
-                      </label>
+                  <div className="frame-avatar d-flex justify-content-center align-items-center">
                     </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="gridRadios"
-                        id="gridRadios2"
-                        value="option2"
-                      />
-                      <label class="form-check-label" for="gridRadios2">
-                        Second radio
-                      </label>
-                    </div>
-                    <div class="form-check disabled">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="gridRadios"
-                        id="gridRadios3"
-                        value="option3"
-                        disabled
-                      />
-                      <label class="form-check-label" for="gridRadios3">
-                        Third disabled radio
-                      </label>
+                  <div className="row mb-3 d-flex justify-content-center align-items-center">
+                    <label
+                      className="col-sm-2 col-form-label"
+                    >
+                       Tên đăng nhập
+                    </label>
+                    <div className="col-sm-4">
+                      <input type="text" className="form-control" />
                     </div>
                   </div>
-                </fieldset>
-                <div class="row mb-3">
-                  <div class="col-sm-4 offset-sm-2">
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="gridCheck1"
-                      />
-                      <label class="form-check-label" for="gridCheck1">
-                        Example checkbox
-                      </label>
+                  <div className="row mb-3 d-flex justify-content-center align-items-center">
+                    <label
+                      for="inputEmail3"
+                      className="col-sm-2 col-form-label"
+                    >
+                      Email
+                    </label>
+                    <div className="col-sm-4">
+                      <input type="text" className="form-control" />
                     </div>
                   </div>
-                </div>
-                <button type="submit" class="btn btn-primary">
-                  Lưu
-                </button>
-              </form>
-            </div>
-            <div className="frame-avatar">
-
-            </div>
-          
+                  <div className="row mb-3 d-flex justify-content-center align-items-center">
+                    <label
+                      for="inputEmail3"
+                      className="col-sm-2 col-form-label"
+                    >
+                      Telephone
+                    </label>
+                    <div className="col-sm-4">
+                      <input
+                        type="email"
+                        className="form-control"
+                        id="inputEmail3"
+                      />
+                    </div>
+                    
+                  </div>
+                  <fieldset className="row mb-3 d-flex justify-content-center align-items-center">
+                    <legend className="col-form-label col-sm-2 pt-0">
+                      Giới tính
+                    </legend>
+                    <div className="col-sm-4 d-flex align-items-center">
+                      <div className="form-check me-3">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="flexRadioDefault1"
+                        />
+                        <label className="form-check-label">Nam</label>
+                      </div>
+                      <div className="form-check me-3">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="flexRadioDefault2"
+                          checked
+                        />
+                        <label className="form-check-label">Nữ</label>
+                      </div>
+                      <div className="form-check me-3">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="flexRadioDefault2"
+                          checked
+                        />
+                        <label className="form-check-label">Khác</label>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <div className="mb-3 d-flex justify-content-center align-items-center">
+                    <label
+                      for="inputBirthday"
+                      className="col-sm-2 col-form-label"
+                    >
+                      Ngày Sinh
+                    </label>
+                    <div className="d-flex ">
+                      <select
+                        className="form-select me-3"
+                        aria-label="Default select example"
+                      >
+                        <option selected>Open this select menu</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                      <select
+                        className="form-select me-3"
+                        aria-label="Default select example"
+                      >
+                        <option selected>Open this select menu</option>
+                        <option value="1">Tháng 1</option>
+                        <option value="2">Tháng 2</option>
+                        <option value="3">Tháng 3</option>
+                      </select>
+                      <select
+                        className="form-select me-3"
+                        aria-label="Default select example"
+                      >
+                        <option selected>Open this select menu</option>
+                        <option value="1">2002</option>
+                        <option value="2">2001</option>
+                        <option value="3">2000</option>
+                      </select>
+                    </div>
+                  </div>
+                 <div className="text-center">
+                    <button type="submit" className="btn btn-save px-5">
+                    Lưu
+                  </button>
+                 </div>
+                 
+                </form>
+              </div>
             </div>
           </div>
         </div>
