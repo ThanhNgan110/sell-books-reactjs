@@ -11,10 +11,11 @@
 }
 
 .btn-dark:hover {
-  color: #000;
-  background-color: #fff;
-  border-color: #f30b0b;
+  color: #fff;
+  background-color: #2d2d2d;
+  border-color: #000;
   border-radius: inherit;
+
 }
 
 .page-register {

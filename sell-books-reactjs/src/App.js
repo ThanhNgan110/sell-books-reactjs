@@ -6,6 +6,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import Home from "./pages/Home";
 import RootPage from "./pages/Root";
 import Profile from "./pages/Profile";
+import DetailBook from "./pages/DetailBook";
 
 function App() {
   const router = createBrowserRouter([
@@ -23,6 +24,7 @@ function App() {
              { path: "profile", element: <Profile/> },
           ],
         },
+        {path:"book/detailBook",element:<DetailBook/>}
       ],
     },
   ]);
