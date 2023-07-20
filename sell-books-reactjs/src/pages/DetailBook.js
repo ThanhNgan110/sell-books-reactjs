@@ -1,6 +1,9 @@
 import React from "react";
 import arrow from "../assets/svg/arrow-right.svg";
 import img from "../assets/img.jpg";
+import img1 from "../assets/img3.jpg";
+import img2 from "../assets/img4.jpg";
+import img3 from "../assets/img5.jpg";
 import "../assets/css/detailBook.css";
 import add from "../assets/svg/add.svg";
 import minus from "../assets/svg/minus.svg";
@@ -13,7 +16,6 @@ const DetailBook = () => {
         <div className="container">
           <section className="section-detailBook">
             <div className="d-flex justify-content-between align-items-center">
-              <h5>Book Detail</h5>
               <nav>
                 <a className="link-black-100" href="/">
                   Home
@@ -32,29 +34,36 @@ const DetailBook = () => {
                 </a>
               </nav>
             </div>
-            <div className="product p-5">
-              <div className="row">
-                <div className="col-lg-6 col-sm-12 text-center pb-3">
-                  <div>
-                     <img className="img-fluid " src={img} alt="img" />
-                  </div>
+            <div className="product p-3">
+              <div className="row bg-white border p-3">
+                <div className="col-lg-6 col-sm-12 text-center border-right pb-3">
+                  <div className="row d-flex flex-column">
+                    <div className="col">
+                    <img className="img-fluid img-choose " src={img} alt="img" />
+                    </div>
                  
+                    <div className="gallery">
+                    <img className="img-fluid active" src={img1} alt="img" />
+                    <img className="img-fluid" src={img2} alt="img" />
+                    <img className="img-fluid" src={img3} alt="img" />
+                  </div>
+                  </div>
                 </div>
-                <div className="col-lg-6 col-sm-12 bg-white border p-3">
+                <div className="col-lg-6 col-sm-12">
                   <div className="book-intro">
                     <div>
                       <h1 className="product_title font-size-26">
                         Where the Crawdads Sing
                       </h1>
                       <div class="font-size-2 mb-4 d-flex align-items-center">
-                        {/* <span class="text-yellow-darker">
+                        <span class="text-yellow-darker">
                         <span class="fas fa-star"></span>
                         <span class="fas fa-star"></span>
                         <span class="fas fa-star"></span>
                         <span class="fas fa-star"></span>
                         <span class="fas fa-star"></span>
-                      </span> */}
-                        {/* <span class="ml-3">(3,714)</span> */}
+                      </span>
+                        <span class="ml-3">(3,714)</span>
                         <span class="ml-3 font-weight-medium me-2">
                           Tác giả
                         </span>
