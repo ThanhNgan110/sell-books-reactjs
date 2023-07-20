@@ -202,6 +202,9 @@ small,
 .font-size-22 {
   font-size: 1.375rem;
 }
+.font-size-7 {
+  font-size: 1.875rem;
+}
 
 @media (max-width: 576px) { 
   .header-top {

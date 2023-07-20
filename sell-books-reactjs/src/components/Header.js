@@ -5,6 +5,7 @@ import "../assets/css/header.css";
 import avatar from "../assets/avatar.jpg";
 import "../assets/css/profile.css";
 
+
 const Header = () => {
   return (
     <>
@@ -186,7 +187,7 @@ const Header = () => {
             </div>
             <div className="d-flex justify-content-end">
               <Link
-                to="/"
+                to="cart"
                 className="nav-link link-black-100 position-relative"
               >
                 <svg

@@ -55,19 +55,19 @@ const DetailBook = () => {
                       <h1 className="product_title font-size-26">
                         Where the Crawdads Sing
                       </h1>
-                      <div class="font-size-2 mb-4 d-flex align-items-center">
-                        <span class="text-yellow-darker">
-                        <span class="fas fa-star"></span>
-                        <span class="fas fa-star"></span>
-                        <span class="fas fa-star"></span>
-                        <span class="fas fa-star"></span>
-                        <span class="fas fa-star"></span>
+                      <div className="font-size-2 mb-4 d-flex align-items-center">
+                        <span className="text-yellow-darker">
+                        <span className="fas fa-star"></span>
+                        <span className="fas fa-star"></span>
+                        <span className="fas fa-star"></span>
+                        <span className="fas fa-star"></span>
+                        <span className="fas fa-star"></span>
                       </span>
-                        <span class="ml-3">(3,714)</span>
-                        <span class="ml-3 font-weight-medium me-2">
+                        <span className="ml-3">(3,714)</span>
+                        <span className="ml-3 font-weight-medium me-2">
                           Tác giả
                         </span>
-                        <span class="ml-2 text-gray-600">Anna Banks</span>
+                        <span className="ml-2 text-gray-600">Anna Banks</span>
                       </div>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -78,14 +78,18 @@ const DetailBook = () => {
                       71.000
                       <span>đ</span>
                     </p>
-                    <div className="d-flex align-items-center">
-                      <div class="border px-2 py-1 width-120">
-                        <div class="js-quantity">
-                          <div class="d-flex align-items-center">
-                            <label class="screen-reader-text sr-only">
-                              Quantity
-                            </label>
-                            <a class="js-minus text-dark" href="/">
+                    <p className="label font-weight-medium">
+                             Số Lượng
+                            </p>
+                    
+                    <div className="d-flex align-items-center mb-4">
+                      <div className="border px-2 py-1 width-120">
+                        
+                        <div className="js-quantity">
+                          
+                          <div className="d-flex align-items-center">
+                            
+                            <a className="js-minus text-dark" href="/">
                               <img src={minus} alt="minus" />
                             </a>
                             <input
@@ -95,21 +99,24 @@ const DetailBook = () => {
                               name="quantity"
                               min="1"
                               max="100"
+                              value="1"
                             />
-                            <a class="js-plus text-dark" href="/">
+                            <a className="js-plus text-dark" href="/">
                               <img src={add} alt="add" />
                             </a>
                           </div>
                         </div>
                       </div>
-                      <button
+                   
+                    </div>
+                    
+                  </div>
+                  <button
                         type="submit"
-                        className="border-0 btn-dark p-3 btn-lock ms-3"
+                        className="border-0 btn-dark p-3 btn-lock"
                       >
                         Add to cart
                       </button>
-                    </div>
-                  </div>
                 </div>
               
               </div>
@@ -118,10 +125,10 @@ const DetailBook = () => {
         </div>
       </div>
       <div className="tabs wc-tabs-wrapper container">
-        <ul class="nav nav-tabs d-flex justify-content-center py-3 border-bottom" id="myTab" role="tablist">
-          <li class="nav-item" role="presentation">
+        <ul className="nav nav-tabs d-flex justify-content-center py-3 border-bottom" id="myTab" role="tablist">
+          <li className="nav-item" role="presentation">
             <button
-              class="nav-link active border-0 nav-link font-weight-medium"
+              className="nav-link active border-0 nav-link font-weight-medium"
               id="home-tab"
               data-bs-toggle="tab"
               data-bs-target="#home"
@@ -133,9 +140,9 @@ const DetailBook = () => {
               Mô tả
             </button>
           </li>
-          <li class="nav-item" role="presentation">
+          <li className="nav-item" role="presentation">
             <button
-              class="nav-link border-0 nav-link font-weight-medium"
+              className="nav-link border-0 nav-link font-weight-medium"
               id="profile-tab"
               data-bs-toggle="tab"
               data-bs-target="#profile"
@@ -147,9 +154,9 @@ const DetailBook = () => {
               Thông tin chi tiết
             </button>
           </li>
-          <li class="nav-item" role="presentation">
+          <li className="nav-item" role="presentation">
             <button
-              class="nav-link border-0 nav-link font-weight-medium"
+              className="nav-link border-0 nav-link font-weight-medium"
               id="messages-tab"
               data-bs-toggle="tab"
               data-bs-target="#messages"
@@ -163,9 +170,9 @@ const DetailBook = () => {
           </li>
         </ul>
 
-        <div class="tab-content px-5 mt-4">
+        <div className="tab-content px-5 mt-4">
           <div
-            class="tab-pane active"
+            className="tab-pane active"
             id="home"
             role="tabpanel"
             aria-labelledby="home-tab"
@@ -210,7 +217,7 @@ const DetailBook = () => {
           
           </div>
           <div
-            class="tab-pane"
+            className="tab-pane"
             id="profile"
             role="tabpanel"
             aria-labelledby="profile-tab"
@@ -255,7 +262,7 @@ const DetailBook = () => {
           
           </div>
           <div
-            class="tab-pane"
+            className="tab-pane"
             id="messages"
             role="tabpanel"
             aria-labelledby="messages-tab"
