@@ -39,7 +39,7 @@ const Login = () => {
     let isValid = true;
     const newError = {};
     if (formData.username === undefined) {
-      newError.username = "UserName không được để trống";
+      newError.username = "Email không được để trống";
       isValid = false;
     }
     if (formData.password === undefined) {
@@ -74,7 +74,7 @@ const Login = () => {
     <>
       <div className="container">
         <div className="row">
-          <div className="col-xl-4 col-md-6 col-sm-12 col-sx-12 mx-auto">
+          <div className="col-xl-4 col-md-8 col-sm-12 col-sx-12 mx-auto">
             <div className="page-register">
               <h1 className="text-center fs-3">Login</h1>
               <div className="text-center mb-3">
@@ -97,7 +97,7 @@ const Login = () => {
                     value={formData.username}
                     onChange={handleInputChange}
                   />
-                  <Error onError={isError.userName} />
+                  <Error onError={isError.username} />
                 </div>
                 <div className="mb-3 position-relative">
                   <input

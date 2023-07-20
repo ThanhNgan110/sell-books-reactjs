@@ -1,13 +1,44 @@
 .input-search {
   padding: 0.65rem;
 }
-.height-s{
+.height-s {
   border-right: 1px solid hsl(0deg 54.29% 50.43% / 40%);
   position: relative;
   top: 0.78rem;
   height: 1rem;
 }
 
-.site-nav{
+.site-nav {
   padding: 0 25px;
+}
+
+
+ul#main_menu .dropdown-menu{
+  display: none;
+
+}
+
+.dropdown-menu {
+  display:none;
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 0.25rem;
+  top: 2.5rem;
+  right:0;
+}
+
+#main_menu li:hover  .dropdown-menu {
+  display: block !important;
+
 }

@@ -1,5 +1,5 @@
-import React, { useState, useEffect} from "react";
-import { Link, useNavigate} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../assets/css/register.css";
 import "../index.css";
 import Error from "../components/Error";
@@ -7,11 +7,8 @@ import Error from "../components/Error";
 const Register = () => {
   const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({
-  });
+  const [formData, setFormData] = useState({});
   const [isError, setIsError] = useState({});
-  
-
 
   const handleInputChange = (e) => {
     setFormData({
@@ -26,6 +23,12 @@ const Register = () => {
     let regex =
       /^(?!.*\s)(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹]).{9,10}$/;
     const check = regex.test(value);
+    return check;
+  };
+  // check isvalid email
+  const checkValidEmail = (value) => {
+    let emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const check = emailFormat.test(value);
     return check;
   };
 
@@ -43,6 +46,9 @@ const Register = () => {
     const newError = {};
     if (formData.username === undefined) {
       newError.username = "Email không được để trống";
+      isvalid = false;
+    } else if (!checkValidEmail(formData.username)) {
+      newError.username = "Email không đúng định dạng";
       isvalid = false;
     }
 
@@ -72,39 +78,41 @@ const Register = () => {
     if (isvalid) {
       try {
         console.log(accountRegister);
-        const respone = await fetch("http://173.255.114.207:85/api/create-user/", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(accountRegister),
-        });
+        const respone = await fetch(
+          "https://sale-books-reactjs-default-rtdb.firebaseio.com/account.json",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(accountRegister),
+          }
+        );
 
         // console.log(respone.status);
         // console.log(respone.json);
         if (!respone.ok) {
-          if( formData.username && respone.status === 500){
-           const errorData = await respone.json();
-          console.log("Error", errorData);
-          setIsError({ username: "Email không tồn tại" });
-          return;
-          }
-          if( formData.username && respone.status === 400){
+          if (formData.username && respone.status === 500) {
             const errorData = await respone.json();
-           console.log("Error", errorData);
-           setIsError({ username: "Email đã được đăng ký" });
-           return;
-           }
-           if( formData.telephone && respone.status === 400){
-           const errorData = await respone.json();
-           console.log("Error", errorData);
-           setIsError({ telephone: "Telephone đã được đăng ký"});
-           return;
-           }
-
+            console.log("Error", errorData);
+            setIsError({ username: "Email không tồn tại" });
+            return;
+          }
+          if (formData.username && respone.status === 400) {
+            const errorData = await respone.json();
+            console.log("Error", errorData);
+            setIsError({ username: "Email đã được đăng ký" });
+            return;
+          }
+          if (formData.telephone && respone.status === 400) {
+            const errorData = await respone.json();
+            console.log("Error", errorData);
+            setIsError({ telephone: "Telephone đã được đăng ký" });
+            return;
+          }
         }
         const result = await respone.json();
-        alert('succcess');
+        alert("succcess");
         console.log("Result", result);
         setFormData({});
         console.log(formData);
@@ -113,7 +121,6 @@ const Register = () => {
         console.log("Error", error.message);
       }
     }
- 
   };
   useEffect(() => {
     console.log(isError);
@@ -132,7 +139,11 @@ const Register = () => {
                   tại đây
                 </Link>
               </div>
-              <form action="http://34.29.205.142:85/api/create-user" method="post" onSubmit={submitRegisterHandler}>
+              <form
+                action="http://34.29.205.142:85/api/create-user"
+                method="post"
+                onSubmit={submitRegisterHandler}
+              >
                 <div className="mb-3">
                   <input
                     type="text"
