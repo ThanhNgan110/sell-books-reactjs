@@ -107,7 +107,6 @@ const DetailBook = () => {
                           </div>
                         </div>
                       </div>
-                   
                     </div>
                     
                   </div>

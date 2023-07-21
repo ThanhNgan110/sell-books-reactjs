@@ -1,0 +1,15 @@
+.table_shop th,
+.table_shop td{
+    padding: 1.6rem 1rem;
+}
+.table_shop tbody td,
+.table_shop thead tr
+ {
+    border-bottom: 1px solid #eae8e4;
+
+ }
+ tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: none;
+    border-width: 0;
+ }
