@@ -205,6 +205,9 @@ small,
 .font-size-7 {
   font-size: 1.875rem;
 }
+.black-16 {
+  color: #161619;
+}
 
 @media (max-width: 576px) { 
   .header-top {
