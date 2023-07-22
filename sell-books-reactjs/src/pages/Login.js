@@ -34,7 +34,7 @@ const Login = () => {
     user_password: formData.password,
   };
 
-  const submitLoginHandler = (e) => {
+  const submitLoginHandler = async (e) => {
     e.preventDefault();
     let isValid = true;
     const newError = {};
@@ -50,24 +50,43 @@ const Login = () => {
       setIsError(newError);
     }
     if (isValid) {
-      fetch("http://34.29.205.142:85/api/get-user", {
-        method: "POST",
+   try {
+    const response = await fetch(
+      "https://64a62afc00c3559aa9c06b8c.mockapi.io/account",
+      {
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(accountLogin),
-      })
-        .then((response) => {
-          return response.json();
-        })
-        .then((data) => {
-          console.log("succcess");
-          console.log(data);
-          navigate("/");
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+        // body: JSON.stringify(accountLogin),
+      }
+    )
+    const data = await response.json();
+    // console.log(data);
+    // test api mockapi 
+    // const user_username = formData.username;
+    // const user_password = formData.password;
+    // const user = data.find(user => user.username === user_username && user.password === user_password);
+    // 
+    // save data to localstorage
+    
+     localStorage.setItem("user", JSON.stringify(accountLogin));
+    // read data from localstorage
+    // const userLogin = JSON.parse(localStorage.getItem("user"));
+    // console.log(userLogin.user_username);
+    navigate("/");
+
+
+   } catch (error) {
+    console.log(error.message);
+    
+   }
+
+        
+    
+
+      
+        ;
     }
   };
   return (
@@ -84,7 +103,6 @@ const Login = () => {
                 </Link>
               </div>
               <form
-                action="http://34.29.205.142:85/api/get-user"
                 method="POST"
                 onSubmit={submitLoginHandler}
               >

@@ -35,7 +35,7 @@ ul#main_menu .dropdown-menu{
   border: 1px solid rgba(0,0,0,.15);
   border-radius: 0.25rem;
   top: 2.5rem;
-  right:0;
+  right:2.5rem;
 }
 
 #main_menu li:hover  .dropdown-menu {

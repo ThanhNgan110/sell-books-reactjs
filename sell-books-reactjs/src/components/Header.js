@@ -1,12 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../index.css";
 import "../assets/css/header.css";
 import avatar from "../assets/avatar.jpg";
 import "../assets/css/profile.css";
+import Account from "./Account";
 
 
 const Header = () => {
+  const [isLoginIn, setIsLoginIn] = useState(false);
+  const [isAccount, setIsAccount] = useState({});
+
+  // read username from localstorage
+  useEffect(() => {
+   
+    const userLogin = JSON.parse(localStorage.getItem("user"));
+    // console.log(userLogin.user_username);
+    // setIsAccount(userLogin.user_username);
+
+    console.log(isAccount);
+    if (userLogin === null) {
+       setIsLoginIn(false);
+       setIsAccount("");
+ 
+    } else {
+      setIsAccount(userLogin.user_username);
+      console.log(isAccount);
+      setIsLoginIn(true);
+    
+   
+    }
+  }, [isAccount]);
+
   return (
     <>
       <header className="container">
@@ -41,87 +66,75 @@ const Header = () => {
                 </div>
               </li>
               <li className="nav-item d-flex flex-row align-items-center">
-                <div class=" d-flex ">
-                  <Link
-                    to="account/register"
-                    id="basicDropdownHoverInvoker1"
-                    class="d-flex align-items-center h-100 dropdown-nav-link p-2 nav-link link-black-100"
-                    role="button"
-                  >
-                    Register
-                  </Link>
-                  <div class="height-s">
-                    <div class="navbar__link-separator"></div>
-                  </div>
-                  <div class="h-100">
+                {/* khi đã login */}
+                {isLoginIn === true ? (
+                  <>
+                  <div className="account">
                     <Link
-                      to="account/login"
+                      to="account/profile"
+                      className="d-flex flex-row align-items-center"
+                    >
+                      <div className="account_avatar pe-2 ">
+                        <img
+                          className="avatar-img"
+                          src={avatar}
+                          alt="avatar"
+                        />
+                      </div>
+                      <Account account={isAccount}/>
+                   
+                    </Link>
+                  </div>
+                  <ul
+                    className="dropdown-menu"
+                    aria-labelledby="navbarDropdown"
+                  >
+                    <li>
+                      <Link className="dropdown-item" to="account/profile">
+                        Thông tin tài khoản
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="account">
+                        Đơn hàng của tôi
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="">
+                        Đăng xuất
+                      </Link>
+                    </li>
+                  </ul>
+                </>
+
+                  
+                ) : (
+                  // khi chưa login
+                  <div class=" d-flex ">
+                    <Link
+                      to="account/register"
                       id="basicDropdownHoverInvoker1"
                       class="d-flex align-items-center h-100 dropdown-nav-link p-2 nav-link link-black-100"
+                      role="button"
                     >
-                      Login
+                      Register
                     </Link>
-                  </div>
-                </div>
-
-                {/* <div className="account ">
-                  <Link
-                    to="account/profile"
-                    className="d-flex flex-row align-items-center"
-                  >
-                    <div className="account_avatar pe-2 ">
-                      <img className="avatar-img" src={avatar} alt="avatar" />
+                    <div class="height-s">
+                      <div class="navbar__link-separator"></div>
                     </div>
-                    <div className="account_username">thanhngan</div>
-                  </Link>
-                </div>
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li>
-                    <Link className="dropdown-item" to="account/profile">
-                      Thông tin tài khoản
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="account">
-                      Đơn hàng của tôi
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="">
-                      Đăng xuất
-                    </Link>
-                  </li>
-                </ul> */}
-              </li>
-
-              {/* <li class="nav-item">
-              <div class="h-100">
-                <Link to="account/register"
-                  id="basicDropdownHoverInvoker1"
-                  class="d-flex align-items-center h-100 dropdown-nav-link p-2 nav-link link-black-100"
-                  role="button"
+                    <div class="h-100">
+                      <Link
+                        to="account/login"
+                        id="basicDropdownHoverInvoker1"
+                        class="d-flex align-items-center h-100 dropdown-nav-link p-2 nav-link link-black-100"
+                      >
+                        Login
+                      </Link>
+                    </div>
+                  </div>
+                )}
                 
-                >
-                  Register
-                </Link>
-              </div>
-            </li> */}
-              {/* 
-            <li class="nav-item">
-              <div class="height-s">
-                <div class="navbar__link-separator"></div>
-              </div>
-            </li> */}
-              {/* <li class="nav-item">
-              <div class="h-100">
-                <Link to="account/login"
-                  id="basicDropdownHoverInvoker1"
-                  class="d-flex align-items-center h-100 dropdown-nav-link p-2 nav-link link-black-100"
-                >
-                  Login
-                </Link>
-              </div>
-            </li> */}
+              </li>
             </ul>
           </div>
         </div>

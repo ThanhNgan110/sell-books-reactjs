@@ -79,7 +79,7 @@ const Register = () => {
       try {
         console.log(accountRegister);
         const respone = await fetch(
-          "https://sale-books-reactjs-default-rtdb.firebaseio.com/account.json",
+          "https://64a62afc00c3559aa9c06b8c.mockapi.io/account",
           {
             method: "POST",
             headers: {
@@ -139,9 +139,7 @@ const Register = () => {
                   tại đây
                 </Link>
               </div>
-              <form
-                action="http://34.29.205.142:85/api/create-user"
-                method="post"
+              <form method="post"
                 onSubmit={submitRegisterHandler}
               >
                 <div className="mb-3">
@@ -160,7 +158,7 @@ const Register = () => {
                     type="text"
                     className="form-control"
                     name="username"
-                    placeholder="UserName"
+                    placeholder="Email"
                     value={formData.username}
                     onChange={handleInputChange}
                   />
