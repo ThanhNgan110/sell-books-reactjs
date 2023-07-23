@@ -96,7 +96,7 @@ const BookDifference = () => {
         <div className="card-body">
           <h6 className="card-title">{book.title}</h6>
           <h6 className="text-gray-700">{book.author}</h6>
-          {/* <h6 className="card-subtitle mb-2 text-muted">{book.author}</h6> */}
+        
           <div className="d-flex align-items-center">
             <span>$</span>
             <span className="card-text font-size-3 font-weight-medium mt-0">
@@ -104,9 +104,7 @@ const BookDifference = () => {
             </span>
           </div>
           <div className="d-flex justify-content-between align-items-center mt-2">
-            {/* <button className="product_add-to-cart text-dark text-dark font-weight-medium "> Add to cart
-               <span className="product_add-to-cart text-dark text-dark font-weight-medium ">Add to cart</span>
-            </button> */}
+          
             <Tooltip title="ADD TO CART" placement="right-start">
               <IconButton>
                 <svg

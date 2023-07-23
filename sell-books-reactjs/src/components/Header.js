@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../index.css";
 import "../assets/css/header.css";
@@ -6,31 +7,30 @@ import avatar from "../assets/avatar.jpg";
 import "../assets/css/profile.css";
 import Account from "./Account";
 
-
 const Header = () => {
   const [isLoginIn, setIsLoginIn] = useState(false);
   const [isAccount, setIsAccount] = useState({});
+  const navigate = useNavigate();
 
-  // read username from localstorage
   useEffect(() => {
-   
     const userLogin = JSON.parse(localStorage.getItem("user"));
-    // console.log(userLogin.user_username);
-    // setIsAccount(userLogin.user_username);
-
-    console.log(isAccount);
     if (userLogin === null) {
-       setIsLoginIn(false);
-       setIsAccount("");
- 
+      setIsLoginIn(false);
+      setIsAccount("");
+      console.log("test");
     } else {
-      setIsAccount(userLogin.user_username);
-      console.log(isAccount);
       setIsLoginIn(true);
-    
-   
+      setIsAccount(userLogin.user_username);
+      console.log("test1");
     }
-  }, [isAccount]);
+    console.log("test2");
+  });
+
+  const LogoutHandler = () => {
+    localStorage.removeItem("user");
+    setIsLoginIn(false);
+    navigate("/");
+  };
 
   return (
     <>
@@ -69,45 +69,45 @@ const Header = () => {
                 {/* khi đã login */}
                 {isLoginIn === true ? (
                   <>
-                  <div className="account">
-                    <Link
-                      to="account/profile"
-                      className="d-flex flex-row align-items-center"
+                    <div className="account">
+                      <Link
+                        to="account/profile"
+                        className="d-flex flex-row align-items-center"
+                      >
+                        <div className="account_avatar pe-2 ">
+                          <img
+                            className="avatar-img"
+                            src={avatar}
+                            alt="avatar"
+                          />
+                        </div>
+                        <Account account={isAccount} />
+                      </Link>
+                    </div>
+                    <ul
+                      className="dropdown-menu"
+                      aria-labelledby="navbarDropdown"
                     >
-                      <div className="account_avatar pe-2 ">
-                        <img
-                          className="avatar-img"
-                          src={avatar}
-                          alt="avatar"
-                        />
-                      </div>
-                      <Account account={isAccount}/>
-                   
-                    </Link>
-                  </div>
-                  <ul
-                    className="dropdown-menu"
-                    aria-labelledby="navbarDropdown"
-                  >
-                    <li>
-                      <Link className="dropdown-item" to="account/profile">
-                        Thông tin tài khoản
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="dropdown-item" to="account">
-                        Đơn hàng của tôi
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="dropdown-item" to="">
-                        Đăng xuất
-                      </Link>
-                    </li>
-                  </ul>
-                </>
-
-                  
+                      <li>
+                        <Link className="dropdown-item" to="account/profile">
+                          Thông tin tài khoản
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="dropdown-item" to="account">
+                          Đơn hàng của tôi
+                        </Link>
+                      </li>
+                      <li>
+                        <button
+                          className="dropdown-item"
+                          onClick={LogoutHandler}
+                        >
+                          Đăng xuất
+                        </button>
+                      </li>
+                    </ul>
+                  </>
                 ) : (
                   // khi chưa login
                   <div class=" d-flex ">
@@ -133,7 +133,6 @@ const Header = () => {
                     </div>
                   </div>
                 )}
-                
               </li>
             </ul>
           </div>
@@ -302,7 +301,6 @@ const Header = () => {
               </div>
             </div>
           </div>
-          {/* </div> */}
         </nav>
       </header>
     </>
