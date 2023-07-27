@@ -17,13 +17,13 @@ const Header = () => {
     if (userLogin === null) {
       setIsLoginIn(false);
       setIsAccount("");
-      console.log("test");
+      // console.log("test");
     } else {
       setIsLoginIn(true);
       setIsAccount(userLogin.user_username);
-      console.log("test1");
+      // console.log("test1");
     }
-    console.log("test2");
+    // console.log("test2");
   });
 
   const LogoutHandler = () => {
