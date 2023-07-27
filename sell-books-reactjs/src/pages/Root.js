@@ -7,7 +7,6 @@ const RootPage = () => {
   return (
    <>
    <Header/>
-   {/* <Footer/> */}
    <Outlet/>
    <Footer/>
    </>
