@@ -3,11 +3,11 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const productSlice =  createSlice({
     name:"product",
-    initialState: {items:[]
+    initialState: {items:[],
     },
     reducers:{
         loadData(state, action){
-            state.items = action.payload.items
+            state.items = action.payload; 
         },
         
     }

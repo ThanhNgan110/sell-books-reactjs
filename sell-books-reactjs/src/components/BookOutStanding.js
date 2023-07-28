@@ -14,18 +14,13 @@ import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
 import {useSelector} from "react-redux";
 
-
-
-
-
 const BookOutStanding = () => {
-  // const dispatch = useDispatch();
-  // useEffect(() =>{
-  //  dispatch(fetchProductOutStanding())
-  // }, [dispatch])
+  // const isLoad = useSelector((state)=> state.products.isLoad);
   const productItems = useSelector((state) => state.products.items);
-  alert("get product");
+  // alert("get product");
+
   console.log(productItems);
+ 
   const settings = {
     infinite: false,
     speed: 500,
