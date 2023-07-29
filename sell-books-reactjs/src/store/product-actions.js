@@ -21,10 +21,11 @@ export const fetchProductOutStanding = () => async (dispatch) => {
 export const fetchProductById = (product_id) => async(dispatch) => {
   try {
     const response = await fetch(
-      `https://64a62afc00c3559aa9c06b8c.mockapi.io/product/${product_id}`
+      `https://64a62afc00c3559aa9c06b8c.mockapi.io/product/?id=${product_id}`
     )
     if(response.ok){
       const data = await response.json();
+      // console.log(data);
       dispatch(productActions.loadProductById(data));
     }
     else{

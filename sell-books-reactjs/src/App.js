@@ -26,7 +26,7 @@ function App() {
             { path: "profile", element: <Profile /> },
           ],
         },
-        { path: "book/detailBook/:product_id", element: <DetailBook /> },
+        { path: "book/:product_id", element: <DetailBook /> },
         
         { path: "cart", element: <Cart /> },
       ],

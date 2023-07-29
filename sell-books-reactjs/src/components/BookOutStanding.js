@@ -69,7 +69,7 @@ const BookOutStanding = () => {
               <div className="card" key={product.id}>
                 <div className="p-3">
                   <div className="product-book mb-3 ">
-                    <Link to={`book/detailBook/${product.id}`}>
+                    <Link to={`book/${product.id}`}>
                       <img className="mx-auto" src={product.image} alt="" style={{width:"200px", height:"auto"}} />
                     </Link>
                   </div>
