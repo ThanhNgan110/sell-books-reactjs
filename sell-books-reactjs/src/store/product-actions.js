@@ -25,7 +25,7 @@ export const fetchProductById = (product_id) => async(dispatch) => {
     )
     if(response.ok){
       const data = await response.json();
-      // console.log(data);
+      console.log(data);
       dispatch(productActions.loadProductById(data));
     }
     else{
