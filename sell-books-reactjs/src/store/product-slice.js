@@ -9,6 +9,9 @@ const productSlice =  createSlice({
         loadData(state, action){
             state.items = action.payload; 
         },
+        loadProductById(state, action){
+            state.items = action.payload;
+        }
         
     }
     

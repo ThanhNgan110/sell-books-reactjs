@@ -1,15 +1,24 @@
 import React from "react";
+import {useParams} from "react-router-dom";
+
 import arrow from "../assets/svg/arrow-right.svg";
-import img from "../assets/img.jpg";
-import img1 from "../assets/img3.jpg";
-import img2 from "../assets/img4.jpg";
-import img3 from "../assets/img5.jpg";
 import "../assets/css/detailBook.css";
 import add from "../assets/svg/add.svg";
 import minus from "../assets/svg/minus.svg";
 import "../index.css";
+import { fetchProductById } from "../store/product-actions";
+import {useDispatch, useSelector} from "react-redux";
+
 
 const DetailBook = () => {
+  const {product_id} = useParams();
+  const dispatch = useDispatch();
+  dispatch(fetchProductById(product_id));
+  const productById = useSelector((state) => state.products.items);
+  console.log(productById);
+
+
+
   return (
     <main>
       <div className="bg-punch-light">
@@ -39,14 +48,10 @@ const DetailBook = () => {
                 <div className="col-lg-6 col-sm-12 text-center border-right pb-3">
                   <div className="row d-flex flex-column">
                     <div className="col">
-                    <img className="img-fluid img-choose " src={img} alt="img" />
+                    <img className="img-fluid img-choose " src="" alt="img" />
                     </div>
                  
-                    <div className="gallery">
-                    <img className="img-fluid active" src={img1} alt="img" />
-                    <img className="img-fluid" src={img2} alt="img" />
-                    <img className="img-fluid" src={img3} alt="img" />
-                  </div>
+                  
                   </div>
                 </div>
                 <div className="col-lg-6 col-sm-12">
@@ -125,20 +130,7 @@ const DetailBook = () => {
       </div>
       <div className="tabs wc-tabs-wrapper container">
         <ul className="nav nav-tabs d-flex justify-content-center py-3 border-bottom" id="myTab" role="tablist">
-          <li className="nav-item" role="presentation">
-            <button
-              className="nav-link active border-0 nav-link font-weight-medium"
-              id="home-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#home"
-              type="button"
-              role="tab"
-              aria-controls="home"
-              aria-selected="true"
-            >
-              Mô tả
-            </button>
-          </li>
+        
           <li className="nav-item" role="presentation">
             <button
               className="nav-link border-0 nav-link font-weight-medium"
@@ -150,7 +142,7 @@ const DetailBook = () => {
               aria-controls="profile"
               aria-selected="false"
             >
-              Thông tin chi tiết
+              Thông tin
             </button>
           </li>
           <li className="nav-item" role="presentation">

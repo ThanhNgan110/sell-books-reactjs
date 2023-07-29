@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import React from 'react';
+import React from "react";
 import "./App.css";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -10,9 +10,7 @@ import Profile from "./pages/Profile";
 import DetailBook from "./pages/DetailBook";
 import Cart from "./pages/Cart";
 
-
 function App() {
-
   const router = createBrowserRouter([
     {
       path: "/",
@@ -25,11 +23,12 @@ function App() {
             { path: "login", element: <Login /> },
             { path: "register", element: <Register /> },
             { path: "forgotPassword", element: <ForgotPassword /> },
-             { path: "profile", element: <Profile/> },
+            { path: "profile", element: <Profile /> },
           ],
         },
-        {path:"book/detailBook",element:<DetailBook/>},
-        {path:"cart", element:<Cart/>}
+        { path: "book/detailBook/:product_id", element: <DetailBook /> },
+        
+        { path: "cart", element: <Cart /> },
       ],
     },
   ]);
