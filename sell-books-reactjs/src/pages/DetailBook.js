@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React,{useEffect, useState} from "react";
 import {useParams, Link} from "react-router-dom";
 
 import arrow from "../assets/svg/arrow-right.svg";
@@ -8,19 +8,34 @@ import minus from "../assets/svg/minus.svg";
 import "../index.css";
 import { fetchProductById } from "../store/product-actions";
 import {useDispatch, useSelector} from "react-redux";
+import { fetchProductFromCart } from "../store/cart-actions";
 
 
 const DetailBook = () => {
+  const [isCount, setIsCount] = useState(1);
+   const addHandler =() => {
+    setIsCount((count)=> count= count+1);
+    console.log(isCount);
+  }
+
+  const minusHandler = () => {
+    setIsCount((count)=> count= count-1);
+    console.log(isCount);
+  }
+
   const {product_id} = useParams();
   const dispatch = useDispatch();
   useEffect(() =>{
       dispatch(fetchProductById(product_id));
   },[dispatch, product_id]);
-  
-
   const productById = useSelector((state) => state.products.single_product);
-
   let convertArray = Object.values(productById);
+  const addCartHandler = (e) => {
+    e.preventDefault();
+    dispatch(fetchProductFromCart(productById));
+  };
+  const disabled = isCount === 1 && "disabled"
+
   return (
     convertArray.map((item) => (
       <main>
@@ -45,7 +60,8 @@ const DetailBook = () => {
               </nav>
             </div>
             <div className="product p-3">
-              <div className="row bg-white border p-3">
+              <form  method="POST" onSubmit={addCartHandler} >
+                  <div className="row bg-white border p-3">
                 <div className="col-lg-6 col-sm-12 text-center border-right pb-3">
                   <div className="row d-flex flex-column">
                     <div className="col">
@@ -82,29 +98,28 @@ const DetailBook = () => {
                     <p className="label font-weight-medium">
                              Số Lượng
                             </p>
-                    
                     <div className="d-flex align-items-center mb-4">
                       <div className="border px-2 py-1 width-120">
-                        
                         <div className="js-quantity">
-                          
                           <div className="d-flex align-items-center">
-                            
-                            <a className="js-minus text-dark" href="/">
-                              <img src={minus} alt="minus" />
-                            </a>
+                            <button className="js-minus text-dark" onClick={minusHandler} style={{border:"none", background:"none"}} disabled={disabled}>
+                              <img src={minus} alt="minus"  />
+                            </button>
                             <input
+                          
+                            
                               className="border-0 text-center form-control"
-                              type="number"
+                              type="text"
                               id="quantity"
                               name="quantity"
                               min="1"
                               max="100"
-                              value="1"
+                              value={isCount}
+                              style={{ padding:"6px 1px"}}
                             />
-                            <a className="js-plus text-dark" href="/">
+                            <button className="js-plus text-dark" onClick={addHandler} style={{border:"none", background:"none"}}>
                               <img src={add} alt="add" />
-                            </a>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -118,8 +133,9 @@ const DetailBook = () => {
                         Add to cart
                       </button>
                 </div>
-              
               </div>
+              </form>
+            
             </div>
           </section>
         </div>
