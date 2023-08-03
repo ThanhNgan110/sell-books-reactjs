@@ -6,11 +6,14 @@ import "../assets/css/header.css";
 import avatar from "../assets/avatar.jpg";
 import "../assets/css/profile.css";
 import Account from "./Account";
+import {useSelector} from "react-redux"
 
 const Header = () => {
   const [isLoginIn, setIsLoginIn] = useState(false);
   const [isAccount, setIsAccount] = useState({});
   const navigate = useNavigate();
+  // const cartQuantity = useSelector((state) => state.carts.totalQuantity);
+  // console.log(cartQuantity);
 
   useEffect(() => {
     const userLogin = JSON.parse(localStorage.getItem("user"));
@@ -221,7 +224,7 @@ const Header = () => {
                 </svg>
 
                 <span className="count_item position-absolute bg-dark text-white width-16 height-16 rounded-circle font-size-n9 padding-x padding-y">
-                  0
+                  {/* {cartQuantity} */}
                 </span>
               </Link>
             </div>

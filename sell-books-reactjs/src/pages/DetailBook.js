@@ -5,6 +5,7 @@ import {useSelector, useDispatch} from "react-redux";
 import {useParams} from "react-router-dom";
 import DetailBookItem from "../components/DetailBookItem";
 import { fetchProductById } from "../store/product-actions";
+import { sendProductFromCart } from "../store/cart-actions";
 
 
 const DetailBook = () => {
@@ -17,6 +18,12 @@ const DetailBook = () => {
 
   const productById = useSelector((state) => state.products.single_product);
   let convertArray = Object.values(productById);
+  const product = useSelector((state) => state.carts);
+  console.log(product);
+  useEffect(()=>{
+    dispatch(sendProductFromCart(product))
+  }, [dispatch, product])
+
 
 
   return (
