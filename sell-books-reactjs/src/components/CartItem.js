@@ -5,13 +5,23 @@ import add from "../assets/svg/add.svg";
 import remove from "../assets/svg/Trash.svg";
 import minus from "../assets/svg/minus.svg";
 import "../assets/css/cartItem.css";
+import {useDispatch} from "react-redux";
+import { cartActions } from '../store/cart-slice';
 
 const CartItem = (props) => {
   const {id, title, image, price, quantity} = props.cart; 
-  const addHandler = () => {
+  // const [isCount, setIsCount] = useState(1);
+  const dispatch = useDispatch();
 
+  const addHandler = () => {
+    // setIsCount((prevCount) => prevCount++);
+    // console.log(isCount);
+    dispatch(cartActions.toggleQuantity(id));
   }
   const minusHandler = () => {
+    // setIsCount((prevCount) => prevCount--);
+    // console.log(isCount);
+    dispatch(cartActions.toggleQuantity(id));
 
   }
 

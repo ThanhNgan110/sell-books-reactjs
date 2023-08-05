@@ -38,6 +38,24 @@ const cartSlice = createSlice({
       state.totalQuantity ++;    
       state.totalPrice = newItem.price * newItem.quantity
     },
+    toggleQuantity(state, action){
+      let findId = state.items.find((item) => item.id === action.payload);
+      console.log(findId);
+      if(findId){
+        const max = 100
+        if(findId.quantity > 1 && findId.quantity <= max ){
+          findId.quantity --;
+        }
+        else if(findId.quantity < 1){
+          findId.quantity = 1;
+        }
+
+       
+      }
+     
+
+    },
+   
   },
 });
 export const cartActions = cartSlice.actions;

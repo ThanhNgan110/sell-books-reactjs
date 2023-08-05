@@ -45,7 +45,7 @@ const BookOutStanding = () => {
         <div className="d-flex justify-content-between align-items-center">
           <h2 className="font-size-26">SÁCH NỔI BẬT</h2>
           <Link
-            to=""
+            to="book"
             className="d-flex justify-content-between align-items-center h-primary"
           >
             Xem Tất Cả

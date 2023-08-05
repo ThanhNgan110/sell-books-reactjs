@@ -9,6 +9,7 @@ import RootPage from "./pages/Root";
 import Profile from "./pages/Profile";
 import DetailBook from "./pages/DetailBook";
 import Cart from "./pages/Cart";
+import Products from "./pages/Products";
 
 function App() {
   const router = createBrowserRouter([
@@ -26,6 +27,8 @@ function App() {
             { path: "profile", element: <Profile /> },
           ],
         },
+        {path:"book", element: <Products/>},
+
         { path: "book/:product_id", element: <DetailBook /> },
         
         { path: "cart", element: <Cart /> },
