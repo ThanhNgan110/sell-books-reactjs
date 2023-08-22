@@ -3,7 +3,6 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-  
       <footer class="bg-dark">
         <div class="container-fluid p-0">
           <div class="border-bottom border-gray-710 ">

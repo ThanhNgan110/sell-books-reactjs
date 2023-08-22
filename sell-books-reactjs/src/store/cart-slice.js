@@ -49,11 +49,7 @@ const cartSlice = createSlice({
         else if(findId.quantity < 1){
           findId.quantity = 1;
         }
-
-       
       }
-     
-
     },
    
   },

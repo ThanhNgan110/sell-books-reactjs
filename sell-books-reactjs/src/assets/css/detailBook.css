@@ -53,3 +53,7 @@
 .border-right{
   border-right: 1px solid #eae8e4 !important;
 }
+
+.product-price{
+  color: rgb(255, 66, 78);
+}

@@ -41,7 +41,6 @@ const Register = () => {
 
   const submitRegisterHandler = async (e) => {
     e.preventDefault();
-    // alert("hhhi");
     let isvalid = true;
     const newError = {};
     if (formData.username === undefined) {
@@ -146,6 +145,17 @@ const Register = () => {
                   <input
                     type="text"
                     className="form-control"
+                    name="username"
+                    placeholder="UserName"
+                    value={formData.fullname}
+                    onChange={handleInputChange}
+                  />
+                  <Error onError={isError.fullname} />
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="text"
+                    className="form-control"
                     name="fullname"
                     placeholder="FullName"
                     value={formData.fullname}
@@ -187,6 +197,21 @@ const Register = () => {
                     onChange={handleInputChange}
                   />
                   <Error onError={isError.password} />
+                </div>
+              
+                <div className="d-flex flex-row mb-3">
+                  <div className="me-2">
+                    <input type="radio" name="gender" value="Nữ"/>
+                  <label>Nữ</label>
+                  </div>
+                  <div className="me-2">
+                    <input type="radio" name="gender" value="Nam"/>
+                  <label>Nam</label>
+                  </div>
+                  <div className="me-2">
+                     <input type="radio" name="gender" value="Khác"/>
+                  <label>Khác</label>
+                  </div>
                 </div>
                 <div className="btn-register">
                   <button type="submit" className="btn btn-block btn-dark">
