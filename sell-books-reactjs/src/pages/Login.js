@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "../assets/css/login.css";
 import Error from "../components/Error";
+import { useDispatch } from "react-redux";
+import { fetchLoginAccount } from "../store/auth-actions";
 
 const Login = () => {
   const [formData, setFormData] = useState({});
   const [isError, setIsError] = useState({});
   const [status, setStatus] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleInputChange = (e) => {
     setFormData({
@@ -30,8 +33,8 @@ const Login = () => {
   );
 
   const accountLogin = {
-    user_username: formData.username,
-    user_password: formData.password,
+    username: formData.username,
+    password: formData.password,
   };
 
   const submitLoginHandler = async (e) => {
@@ -39,7 +42,7 @@ const Login = () => {
     let isValid = true;
     const newError = {};
     if (formData.username === undefined) {
-      newError.username = "Email không được để trống";
+      newError.username = "UserName không được để trống";
       isValid = false;
     }
     if (formData.password === undefined) {
@@ -50,38 +53,29 @@ const Login = () => {
       setIsError(newError);
     }
     if (isValid) {
-   try {
-    const response = await fetch(
-      "https://64a62afc00c3559aa9c06b8c.mockapi.io/account",
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        // body: JSON.stringify(accountLogin),
-      }
-    )
-    const data = await response.json();
-    // console.log(data);
-    // test api mockapi 
-    // const user_username = formData.username;
-    // const user_password = formData.password;
-    // const user = data.find(user => user.username === user_username && user.password === user_password);
-    // 
-    // save data to localstorage
-    
-     localStorage.setItem("user", JSON.stringify(accountLogin));
-    // read data from localstorage
-    // const userLogin = JSON.parse(localStorage.getItem("user"));
-    // console.log(userLogin.user_username);
-    navigate("/");
+      console.log("test");
+      dispatch(fetchLoginAccount(accountLogin));
+      navigate("/");
+      //  try {
+      //   const response = await fetch(
+      //     "http://localhost:3000/api/login",
+      //     {
+      //       method: "POST",
+      //       headers: {
+      //         "Content-Type": "application/json",
+      //       },
+      //       body: JSON.stringify(accountLogin)
+      //     }
+      //   )
+      //   const data = await response.json();
+      //   const token = data.token;
+      //   console.log(token);
+      //   // save token localStorage
+      //   localStorage.setItem("token", token);
 
-
-   } catch (error) {
-    console.log(error.message);
-    
-   }
-        ;
+      //  } catch (error) {
+      //   console.log(error.message);
+      //  }
     }
   };
   return (
@@ -97,10 +91,7 @@ const Login = () => {
                   tại đây
                 </Link>
               </div>
-              <form
-                method="POST"
-                onSubmit={submitLoginHandler}
-              >
+              <form method="POST" onSubmit={submitLoginHandler}>
                 <div className="mb-3">
                   <input
                     name="username"

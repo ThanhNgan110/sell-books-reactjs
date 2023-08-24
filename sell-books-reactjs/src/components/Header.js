@@ -27,7 +27,7 @@ const Header = () => {
       // console.log("test1");
     }
     // console.log("test2");
-  });
+  }, []);
 
   const LogoutHandler = () => {
     localStorage.removeItem("user");
