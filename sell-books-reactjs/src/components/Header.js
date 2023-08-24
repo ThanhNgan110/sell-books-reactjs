@@ -1,38 +1,44 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
 import "../index.css";
 import "../assets/css/header.css";
 import avatar from "../assets/avatar.jpg";
 import "../assets/css/profile.css";
 import Account from "./Account";
-import {useSelector} from "react-redux"
+import {useSelector, useDispatch} from "react-redux";
+import { authActions } from "../store/auth-slice";
+
 
 const Header = () => {
-  const [isLoginIn, setIsLoginIn] = useState(false);
-  const [isAccount, setIsAccount] = useState({});
-  const navigate = useNavigate();
+
   // const cartQuantity = useSelector((state) => state.carts.totalQuantity);
   // console.log(cartQuantity);
+  
+  const accountUserName = useSelector((state) => state.accounts.account);
+  const accountIsLoginIn = useSelector((state) => state.accounts.isLogin);
+  console.log(accountUserName);
+  console.log(accountIsLoginIn);
+  const dispatch = useDispatch();
+ 
 
-  useEffect(() => {
-    const userLogin = JSON.parse(localStorage.getItem("user"));
-    if (userLogin === null) {
-      setIsLoginIn(false);
-      setIsAccount("");
-      // console.log("test");
-    } else {
-      setIsLoginIn(true);
-      setIsAccount(userLogin.user_username);
-      // console.log("test1");
-    }
-    // console.log("test2");
-  }, []);
+  const userLogin = localStorage.getItem("account");
+  console.log(userLogin);
+  userLogin !== null && 
+  dispatch(authActions.checkAccount({
+    account: userLogin,
+    isLogin: true
+  }));
+
 
   const LogoutHandler = () => {
-    localStorage.removeItem("user");
-    setIsLoginIn(false);
-    navigate("/");
+    const accountRemove = localStorage.removeItem("account");
+    dispatch(authActions.logoutAccount({
+      account: accountRemove,
+      isLogin: false
+    }));
+    // console.log("test");
+    // console.log(accountUserName);
+
   };
 
   return (
@@ -69,8 +75,8 @@ const Header = () => {
                 </div>
               </li>
               <li className="nav-item d-flex flex-row align-items-center">
-                {/* khi đã login */}
-                {isLoginIn === true ? (
+
+                {accountIsLoginIn ? (
                   <>
                     <div className="account">
                       <Link
@@ -84,7 +90,7 @@ const Header = () => {
                             alt="avatar"
                           />
                         </div>
-                        <Account account={isAccount} />
+                        <Account account={accountUserName} />
                       </Link>
                     </div>
                     <ul
@@ -112,7 +118,6 @@ const Header = () => {
                     </ul>
                   </>
                 ) : (
-                  // khi chưa login
                   <div class=" d-flex ">
                     <Link
                       to="account/register"

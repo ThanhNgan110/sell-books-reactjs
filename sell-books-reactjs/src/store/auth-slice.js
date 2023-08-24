@@ -11,9 +11,16 @@ const authSlice = createSlice({
         state.account = action.payload.account;
         state.isLogin = action.payload.isLogin
     },
-    logoutAccount(state, action){
+    checkAccount(state, action){
+      state.account = action.payload.account;
       state.isLogin = action.payload.isLogin
-    }
+     },
+
+    logoutAccount(state, action){
+      state.account = action.payload.account
+      state.isLogin = action.payload.isLogin;
+    },
+    
     
   },
 });

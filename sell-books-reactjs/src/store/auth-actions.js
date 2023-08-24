@@ -12,7 +12,6 @@ export const registerAcount = (account) => async dispatch =>{
         
     } catch (error) { 
         console.log(error);
-        
     }
 
 };
