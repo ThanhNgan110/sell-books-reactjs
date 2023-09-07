@@ -5,6 +5,7 @@ const authSlice = createSlice({
   initialState: {
     account: {},
     isLogin: false,
+    accountInfor:{}
   },
   reducers: {
     loginAccount(state, action){
@@ -20,6 +21,9 @@ const authSlice = createSlice({
       state.account = action.payload.account
       state.isLogin = action.payload.isLogin;
     },
+    profileAccount(state, action){
+      state.accountInfor = action.payload;
+    }
     
     
   },

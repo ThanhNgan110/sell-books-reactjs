@@ -1,10 +1,25 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import avatar from "../assets/avatar.jpg";
 import "../assets/css/profile.css";
 import "../index.css";
+import { fetchAccountProfi } from "../store/auth-actions";
+import { useDispatch, useSelector } from "react-redux";
+
 
 const Profile = () => {
+  const user_id = localStorage.getItem("user_id");
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchAccountProfi(user_id));
+  }, [dispatch, user_id]);
+  const accountProfile = useSelector((state) => state.accounts.accountInfor);
+  console.log(accountProfile);
+  const data =[accountProfile]
+  console.log(data)
+  const username = data.map((acc) => acc.user_username);
+ 
+
   return (
     <div className="container my-5">
       <div className="row">
@@ -16,7 +31,7 @@ const Profile = () => {
               </div>
             </Link>
             <div className="account-info d-flex flex-column align-items-center">
-              <div className="account_username ">thanhngan</div>
+              <div className="account_username ">{username}</div>
               <div className="d-flex align-items-center">
                 <Link to="/" className="d-flex ">
                   <span>
@@ -207,15 +222,12 @@ const Profile = () => {
                           />
                         </svg>
                       </span>
-                    </div>                   
-                  </div>
-                  <div className="frame-avatar d-flex justify-content-center align-items-center">
                     </div>
+                  </div>
+                  <div className="frame-avatar d-flex justify-content-center align-items-center"></div>
                   <div className="row mb-3 d-flex justify-content-center align-items-center">
-                    <label
-                      className="col-sm-2 col-form-label"
-                    >
-                       Tên đăng nhập
+                    <label className="col-sm-2 col-form-label">
+                      Tên đăng nhập
                     </label>
                     <div className="col-sm-4">
                       <input type="text" className="form-control" />
@@ -246,7 +258,6 @@ const Profile = () => {
                         id="inputEmail3"
                       />
                     </div>
-                    
                   </div>
                   <fieldset className="row mb-3 d-flex justify-content-center align-items-center">
                     <legend className="col-form-label col-sm-2 pt-0">
@@ -321,12 +332,11 @@ const Profile = () => {
                       </select>
                     </div>
                   </div>
-                 <div className="text-center">
+                  <div className="text-center">
                     <button type="submit" className="btn btn-save px-5">
-                    Lưu
-                  </button>
-                 </div>
-                 
+                      Lưu
+                    </button>
+                  </div>
                 </form>
               </div>
             </div>

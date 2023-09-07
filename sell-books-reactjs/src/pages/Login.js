@@ -53,7 +53,6 @@ const Login = () => {
       setIsError(newError);
     }
     if (isValid) {
-      console.log("test");
       dispatch(fetchLoginAccount(accountLogin));
       navigate("/");
       //  try {

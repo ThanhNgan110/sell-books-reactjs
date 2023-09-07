@@ -21,7 +21,7 @@ export const fetchProductOutStanding = () => async (dispatch) => {
 export const fetchProductById = (product_id) => async(dispatch) => {
   try {
     const response = await fetch(
-      `https://64a62afc00c3559aa9c06b8c.mockapi.io/product/?id=${product_id}`
+      `http://localhost:3000/api/getbooks/?id=${product_id}`
     )
     if(response.ok){
       const data = await response.json();
@@ -35,6 +35,22 @@ export const fetchProductById = (product_id) => async(dispatch) => {
     
   } catch (error) {
     console.log(error.message);
+    
+  }
+};
+export const fetchAllProduct = () => async(dispatch) =>{
+  try {
+    const response = await fetch("http://localhost:3000/api/getbooks");
+   
+    if(!response.ok){
+      throw new Error("Call api fail");
+    }
+    const results = await response.json();
+    const data = results.data;
+    dispatch(productActions.getAllProduct(data))
+    
+  } catch (error) {
+    console.log(error);
     
   }
 }

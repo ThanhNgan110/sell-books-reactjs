@@ -1,44 +1,48 @@
-import React, {useEffect} from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "../index.css";
 import "../assets/css/header.css";
 import avatar from "../assets/avatar.jpg";
 import "../assets/css/profile.css";
 import Account from "./Account";
-import {useSelector, useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { authActions } from "../store/auth-slice";
-
+import { useNavigate } from "react-router-dom";
+import { removeTokenLocalStorage } from "../utils/auth";
 
 const Header = () => {
-
   // const cartQuantity = useSelector((state) => state.carts.totalQuantity);
   // console.log(cartQuantity);
-  
+  const navigate = useNavigate();
+
   const accountUserName = useSelector((state) => state.accounts.account);
   const accountIsLoginIn = useSelector((state) => state.accounts.isLogin);
-  console.log(accountUserName);
-  console.log(accountIsLoginIn);
+  // console.log(accountUserName);
+  // console.log(accountIsLoginIn);
   const dispatch = useDispatch();
- 
 
   const userLogin = localStorage.getItem("account");
   console.log(userLogin);
-  userLogin !== null && 
-  dispatch(authActions.checkAccount({
-    account: userLogin,
-    isLogin: true
-  }));
-
+  userLogin !== null &&
+    dispatch(
+      authActions.checkAccount({
+        account: userLogin,
+        isLogin: true,
+      })
+    );
 
   const LogoutHandler = () => {
-    const accountRemove = localStorage.removeItem("account");
-    dispatch(authActions.logoutAccount({
-      account: accountRemove,
-      isLogin: false
-    }));
-    // console.log("test");
-    // console.log(accountUserName);
 
+    const accountRemove = localStorage.removeItem("account");
+    removeTokenLocalStorage();
+    console.log(localStorage.getItem("token"));
+    dispatch(
+      authActions.logoutAccount({
+        account: accountRemove,
+        isLogin: false,
+      })
+    );
+    navigate("");
   };
 
   return (
@@ -75,7 +79,6 @@ const Header = () => {
                 </div>
               </li>
               <li className="nav-item d-flex flex-row align-items-center">
-
                 {accountIsLoginIn ? (
                   <>
                     <div className="account">

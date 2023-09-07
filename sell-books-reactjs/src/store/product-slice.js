@@ -6,6 +6,7 @@ const productSlice =  createSlice({
     initialState: {
         items:[],
         single_product:{},
+        products:[],
     },
     reducers:{
         loadData(state, action){
@@ -13,7 +14,12 @@ const productSlice =  createSlice({
         },
         loadProductById(state, action){
             state.single_product = action.payload;
+        },
+        getAllProduct(state, action){
+            state.products = action.payload;
+
         }
+        
         
     }   
 });
